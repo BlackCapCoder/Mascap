@@ -6,6 +6,8 @@ import Data.Maybe
 import qualified Data.Map as M
 
 
+-- Note: Numbers are not standard mascarpone, I chose to
+--       include them for efficiency
 data Symbol = Chr Char | Num Double
             deriving (Ord, Eq)
 
