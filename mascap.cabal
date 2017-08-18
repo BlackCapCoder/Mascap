@@ -19,4 +19,4 @@ executable mascap
                      , containers
                      , mtl
   default-language:    Haskell2010
-  other-modules:       Mascarpone, Mascap, Joy
+  other-modules:       Mascarpone, Mascap, Joy, Prefix

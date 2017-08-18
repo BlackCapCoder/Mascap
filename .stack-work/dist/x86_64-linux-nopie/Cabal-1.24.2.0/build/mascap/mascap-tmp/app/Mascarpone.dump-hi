@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2017-08-01 11:53:09.593393977 UTC
+2017-08-18 20:24:21.256336253 UTC
 
 interface main@main:Mascarpone 8002
-  interface hash: f46319300bb05092ef94181f405531fd
-  ABI hash: f676c8425d040840265970841657e134
+  interface hash: 84655567ae302778fbfcfd7c17cc6f47
+  ABI hash: 451cd48164f9e5a8705f4e988dbde3e7
   export-list hash: 3f0f8a810f536ddcbf15f5b82e0c9b44
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 65748ac5a3dff63306110c433e0d7a9d
@@ -75,6 +75,7 @@ import  -/  base-4.9.1.0:Data.Functor 5ab1dc703df5b482e77efb697833ca3c
 import  -/  base-4.9.1.0:Data.Maybe d876c4ffe4b3c43755a781e8ad860d88
 import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
 import  -/  base-4.9.1.0:GHC.Err 3bba35a16538d33d424682ce66876cdd
+import  -/  base-4.9.1.0:GHC.Show a027f5ac24879eaba752f44aa90fe511
 import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
 import  -/  base-4.9.1.0:System.IO e4a64a8e3dce8616da54f0ee7104f7db
 import  -/  containers-0.5.7.1@containers-0.5.7.1:Data.Map 20d4ffbee41965d03d6a989425473dc4
@@ -84,205 +85,2857 @@ import  -/  ghc-prim-0.5.0.0:GHC.Types 89f8de4f08018c9177c98d979eae0e45
 import  -/  mtl-2.2.1@mtl-2.2.1-BLKBelFsPB3BoFeSWSOYj6:Control.Monad.State 749dca8ca0e6625b32091d445bd92b01
 import  -/  mtl-2.2.1@mtl-2.2.1-BLKBelFsPB3BoFeSWSOYj6:Control.Monad.State.Class 6d31234b0a911b56412061943d18b89e
 import  -/  transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.State.Lazy 371607e50dde46b5f4103b3ab334a497
-086464ff72e3a9c935ff156588f779c7
+f686db1eb2314668a5f530b3cca68098
   $fEqSymbol :: GHC.Classes.Eq Mascarpone.Symbol
   DFunId
-086464ff72e3a9c935ff156588f779c7
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Mascarpone.Symbol
+                  Mascarpone.$fEqSymbol_$c==
+                  Mascarpone.$fEqSymbol_$c/= -}
+f686db1eb2314668a5f530b3cca68098
+  $fEqSymbol_$c/= ::
+    Mascarpone.Symbol -> Mascarpone.Symbol -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (a :: Mascarpone.Symbol) (b :: Mascarpone.Symbol) ->
+                 case a of wild {
+                   Mascarpone.Chr a1
+                   -> case b of wild1 {
+                        Mascarpone.Chr b1
+                        -> case a1 of wild2 { GHC.Types.C# x3 ->
+                           case b1 of wild3 { GHC.Types.C# y ->
+                           case GHC.Prim.tagToEnum#
+                                  @ GHC.Types.Bool
+                                  (GHC.Prim.eqChar# x3 y) of wild4 {
+                             GHC.Types.False -> GHC.Types.True
+                             GHC.Types.True -> GHC.Types.False } } }
+                        Mascarpone.Num ipv -> GHC.Types.True }
+                   Mascarpone.Num a1
+                   -> case b of wild1 {
+                        Mascarpone.Chr ipv -> GHC.Types.True
+                        Mascarpone.Num b1
+                        -> case a1 of wild2 { GHC.Types.D# x3 ->
+                           case b1 of wild3 { GHC.Types.D# y ->
+                           case GHC.Prim.tagToEnum#
+                                  @ GHC.Types.Bool
+                                  (GHC.Prim.==## x3 y) of wild4 {
+                             GHC.Types.False -> GHC.Types.True
+                             GHC.Types.True -> GHC.Types.False } } } } }) -}
+f686db1eb2314668a5f530b3cca68098
+  $fEqSymbol_$c== ::
+    Mascarpone.Symbol -> Mascarpone.Symbol -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (ds :: Mascarpone.Symbol)
+                   (ds1 :: Mascarpone.Symbol) ->
+                 case ds of wild {
+                   Mascarpone.Chr a1
+                   -> case ds1 of wild1 {
+                        Mascarpone.Chr b1 -> GHC.Classes.eqChar a1 b1
+                        Mascarpone.Num ipv -> GHC.Types.False }
+                   Mascarpone.Num a1
+                   -> case ds1 of wild1 {
+                        Mascarpone.Chr ipv -> GHC.Types.False
+                        Mascarpone.Num b1 -> GHC.Classes.eqDouble a1 b1 } }) -}
+399d47d0253de537ec0385742e458ee9
+  $fMonoidInterpreter :: GHC.Base.Monoid Mascarpone.Interpreter
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Mascarpone.Interpreter
+                  Mascarpone.$fMonoidInterpreter_$cmempty
+                  Mascarpone.$fMonoidInterpreter_$cmappend
+                  Mascarpone.$fMonoidInterpreter_$cmconcat -}
+399d47d0253de537ec0385742e458ee9
+  $fMonoidInterpreter_$cmappend ::
+    Mascarpone.Interpreter
+    -> Mascarpone.Interpreter -> Mascarpone.Interpreter
+  {- Arity: 2, Strictness: <S,1*U(1*U,U,A)><S,1*U(1*U,A,C(U))>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Mascarpone.Interpreter) (w1 :: Mascarpone.Interpreter) ->
+                 case w of ww { Mascarpone.Interpreter ww1 ww2 ww3 ->
+                 case w1 of ww4 { Mascarpone.Interpreter ww5 ww6 ww7 ->
+                 case Mascarpone.$w$cmappend
+                        ww1
+                        ww2
+                        ww5
+                        ww7 of ww8 { (#,,#) ww9 ww10 ww11 ->
+                 Mascarpone.Interpreter ww9 ww10 ww11 } } }) -}
+399d47d0253de537ec0385742e458ee9
+  $fMonoidInterpreter_$cmconcat ::
+    [Mascarpone.Interpreter] -> Mascarpone.Interpreter
+  {- Arity: 1, Strictness: <S,1*U>m, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: [Mascarpone.Interpreter]) ->
+                 case Mascarpone.$wgo w of ww { (#,,#) ww1 ww2 ww3 ->
+                 Mascarpone.Interpreter ww1 ww2 ww3 }) -}
+399d47d0253de537ec0385742e458ee9
+  $fMonoidInterpreter_$cmempty :: Mascarpone.Interpreter
+  {- HasNoCafRefs, Strictness: m -}
+f686db1eb2314668a5f530b3cca68098
   $fOrdSymbol :: GHC.Classes.Ord Mascarpone.Symbol
   DFunId
-57c0f7d7f2f107b13d2cc92ab21a82f3
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Mascarpone.Symbol
+                  Mascarpone.$fEqSymbol
+                  Mascarpone.$fOrdSymbol_$ccompare
+                  Mascarpone.$fOrdSymbol_$c<
+                  Mascarpone.$fOrdSymbol_$c<=
+                  Mascarpone.$fOrdSymbol_$c>
+                  Mascarpone.$fOrdSymbol_$c>=
+                  Mascarpone.$fOrdSymbol_$cmax
+                  Mascarpone.$fOrdSymbol_$cmin -}
+f686db1eb2314668a5f530b3cca68098
+  $fOrdSymbol_$c< ::
+    Mascarpone.Symbol -> Mascarpone.Symbol -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (a :: Mascarpone.Symbol) (b :: Mascarpone.Symbol) ->
+                 case a of wild {
+                   Mascarpone.Chr a1
+                   -> case b of wild1 {
+                        Mascarpone.Chr b1 -> GHC.Classes.$fOrdChar_$c< a1 b1
+                        Mascarpone.Num ipv -> GHC.Types.True }
+                   Mascarpone.Num a1
+                   -> case b of wild1 {
+                        Mascarpone.Chr ipv -> GHC.Types.False
+                        Mascarpone.Num b1 -> GHC.Classes.$fOrdDouble_$c< a1 b1 } }) -}
+f686db1eb2314668a5f530b3cca68098
+  $fOrdSymbol_$c<= ::
+    Mascarpone.Symbol -> Mascarpone.Symbol -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (a :: Mascarpone.Symbol) (b :: Mascarpone.Symbol) ->
+                 case a of wild {
+                   Mascarpone.Chr a1
+                   -> case b of wild1 {
+                        Mascarpone.Chr b1 -> GHC.Classes.$fOrdChar_$c<= a1 b1
+                        Mascarpone.Num ipv -> GHC.Types.True }
+                   Mascarpone.Num a1
+                   -> case b of wild1 {
+                        Mascarpone.Chr ipv -> GHC.Types.False
+                        Mascarpone.Num b1 -> GHC.Classes.$fOrdDouble_$c<= a1 b1 } }) -}
+f686db1eb2314668a5f530b3cca68098
+  $fOrdSymbol_$c> ::
+    Mascarpone.Symbol -> Mascarpone.Symbol -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (a :: Mascarpone.Symbol) (b :: Mascarpone.Symbol) ->
+                 case a of wild {
+                   Mascarpone.Chr a1
+                   -> case b of wild1 {
+                        Mascarpone.Chr b1 -> GHC.Classes.$fOrdChar_$c> a1 b1
+                        Mascarpone.Num ipv -> GHC.Types.False }
+                   Mascarpone.Num a1
+                   -> case b of wild1 {
+                        Mascarpone.Chr ipv -> GHC.Types.True
+                        Mascarpone.Num b1 -> GHC.Classes.$fOrdDouble_$c> a1 b1 } }) -}
+f686db1eb2314668a5f530b3cca68098
+  $fOrdSymbol_$c>= ::
+    Mascarpone.Symbol -> Mascarpone.Symbol -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (a :: Mascarpone.Symbol) (b :: Mascarpone.Symbol) ->
+                 case a of wild {
+                   Mascarpone.Chr a1
+                   -> case b of wild1 {
+                        Mascarpone.Chr b1 -> GHC.Classes.$fOrdChar_$c>= a1 b1
+                        Mascarpone.Num ipv -> GHC.Types.False }
+                   Mascarpone.Num a1
+                   -> case b of wild1 {
+                        Mascarpone.Chr ipv -> GHC.Types.True
+                        Mascarpone.Num b1 -> GHC.Classes.$fOrdDouble_$c>= a1 b1 } }) -}
+f686db1eb2314668a5f530b3cca68098
+  $fOrdSymbol_$ccompare ::
+    Mascarpone.Symbol -> Mascarpone.Symbol -> GHC.Types.Ordering
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (a :: Mascarpone.Symbol) (b :: Mascarpone.Symbol) ->
+                 case a of wild {
+                   Mascarpone.Chr a1
+                   -> case b of wild1 {
+                        Mascarpone.Chr b1 -> GHC.Classes.$fOrdChar_$ccompare a1 b1
+                        Mascarpone.Num ipv -> GHC.Types.LT }
+                   Mascarpone.Num a1
+                   -> case b of wild1 {
+                        Mascarpone.Chr ipv -> GHC.Types.GT
+                        Mascarpone.Num b1
+                        -> GHC.Classes.$fOrdDouble_$ccompare a1 b1 } }) -}
+f686db1eb2314668a5f530b3cca68098
+  $fOrdSymbol_$cmax ::
+    Mascarpone.Symbol -> Mascarpone.Symbol -> Mascarpone.Symbol
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (x3 :: Mascarpone.Symbol) (y :: Mascarpone.Symbol) ->
+                 case x3 of wild {
+                   Mascarpone.Chr a1
+                   -> case y of wild1 {
+                        Mascarpone.Chr b1
+                        -> case a1 of wild2 { GHC.Types.C# c1 ->
+                           case b1 of wild3 { GHC.Types.C# c2 ->
+                           case GHC.Prim.tagToEnum#
+                                  @ GHC.Types.Bool
+                                  (GHC.Prim.leChar# c1 c2) of wild4 {
+                             GHC.Types.False -> wild GHC.Types.True -> wild1 } } }
+                        Mascarpone.Num ipv -> wild1 }
+                   Mascarpone.Num a1
+                   -> case y of wild1 {
+                        Mascarpone.Chr ipv -> wild
+                        Mascarpone.Num b1
+                        -> case a1 of wild2 { GHC.Types.D# x4 ->
+                           case b1 of wild3 { GHC.Types.D# y1 ->
+                           case GHC.Prim.tagToEnum#
+                                  @ GHC.Types.Bool
+                                  (GHC.Prim.<=## x4 y1) of wild4 {
+                             GHC.Types.False -> wild GHC.Types.True -> wild1 } } } } }) -}
+f686db1eb2314668a5f530b3cca68098
+  $fOrdSymbol_$cmin ::
+    Mascarpone.Symbol -> Mascarpone.Symbol -> Mascarpone.Symbol
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (x3 :: Mascarpone.Symbol) (y :: Mascarpone.Symbol) ->
+                 case x3 of wild {
+                   Mascarpone.Chr a1
+                   -> case y of wild1 {
+                        Mascarpone.Chr b1
+                        -> case a1 of wild2 { GHC.Types.C# c1 ->
+                           case b1 of wild3 { GHC.Types.C# c2 ->
+                           case GHC.Prim.tagToEnum#
+                                  @ GHC.Types.Bool
+                                  (GHC.Prim.leChar# c1 c2) of wild4 {
+                             GHC.Types.False -> wild1 GHC.Types.True -> wild } } }
+                        Mascarpone.Num ipv -> wild }
+                   Mascarpone.Num a1
+                   -> case y of wild1 {
+                        Mascarpone.Chr ipv -> wild1
+                        Mascarpone.Num b1
+                        -> case a1 of wild2 { GHC.Types.D# x4 ->
+                           case b1 of wild3 { GHC.Types.D# y1 ->
+                           case GHC.Prim.tagToEnum#
+                                  @ GHC.Types.Bool
+                                  (GHC.Prim.<=## x4 y1) of wild4 {
+                             GHC.Types.False -> wild1 GHC.Types.True -> wild } } } } }) -}
+f686db1eb2314668a5f530b3cca68098
+  $fShowSymbol :: GHC.Show.Show Mascarpone.Symbol
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Mascarpone.Symbol
+                  Mascarpone.$fShowSymbol_$cshowsPrec
+                  Mascarpone.$fShowSymbol_$cshow
+                  Mascarpone.$fShowSymbol_$cshowList -}
+f686db1eb2314668a5f530b3cca68098
+  $fShowSymbol1 :: Mascarpone.Symbol -> GHC.Show.ShowS
+  {- Arity: 1,
+     Unfolding: (\ (w :: Mascarpone.Symbol) ->
+                 Mascarpone.$w$cshowsPrec 0# w) -}
+4a4fd5d67bf7fa2d10f9e95afd47de7d
+  $fShowSymbol2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Num "#) -}
+9af39fa473a0e9fd96229656b168b66b
+  $fShowSymbol3 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 11#) -}
+d2a1a02e42ce0b1155dfde79e0c23afd
+  $fShowSymbol4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Chr "#) -}
+ab07435b464af7bcc94e807f7a3a3651
+  $fShowSymbol5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.Base.++
+                   @ GHC.Types.Char
+                   GHC.Show.shows13
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+f37add2a7c1f1403776cebd057de134a
+  $fShowSymbol6 :: [GHC.Types.Char]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Char
+                   GHC.Show.shows14
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+f686db1eb2314668a5f530b3cca68098
+  $fShowSymbol_$cshow :: Mascarpone.Symbol -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (x3 :: Mascarpone.Symbol) ->
+                 case x3 of wild {
+                   Mascarpone.Chr b1
+                   -> GHC.Base.++
+                        @ GHC.Types.Char
+                        Mascarpone.$fShowSymbol4
+                        (case b1 of ww { GHC.Types.C# ww1 ->
+                         case ww1 of ds {
+                           DEFAULT
+                           -> GHC.Types.:
+                                @ GHC.Types.Char
+                                GHC.Show.shows14
+                                (GHC.Show.$wshowLitChar ds Mascarpone.$fShowSymbol6)
+                           '\''# -> Mascarpone.$fShowSymbol5 } })
+                   Mascarpone.Num b1
+                   -> GHC.Base.++
+                        @ GHC.Types.Char
+                        Mascarpone.$fShowSymbol2
+                        (case b1 of ww { GHC.Types.D# ww1 ->
+                         GHC.Float.$w$sshowSignedFloat
+                           GHC.Float.$fShowDouble_$sshowFloat
+                           Mascarpone.$fShowSymbol3
+                           ww1
+                           (GHC.Types.[] @ GHC.Types.Char) }) }) -}
+f686db1eb2314668a5f530b3cca68098
+  $fShowSymbol_$cshowList :: [Mascarpone.Symbol] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Mascarpone.Symbol
+                   Mascarpone.$fShowSymbol1) -}
+f686db1eb2314668a5f530b3cca68098
+  $fShowSymbol_$cshowsPrec ::
+    GHC.Types.Int -> Mascarpone.Symbol -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S(S),1*U(U)><S,1*U>, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: GHC.Types.Int) (w1 :: Mascarpone.Symbol) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 Mascarpone.$w$cshowsPrec ww1 w1 }) -}
+5d7e1e82756c4869a656cb4134cc0ae6
+  $sfromList ::
+    [(Mascarpone.Symbol, a)] -> Data.Map.Base.Map Mascarpone.Symbol a
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ @ a (ds :: [(Mascarpone.Symbol, a)]) ->
+                 case ds of wild {
+                   [] -> Data.Map.Base.Tip @ Mascarpone.Symbol @ a
+                   : ds1 ds2
+                   -> case ds1 of wild1 { (,) kx x3 ->
+                      case ds2 of wild2 {
+                        []
+                        -> case kx of dt { DEFAULT ->
+                           Data.Map.Base.Bin
+                             @ Mascarpone.Symbol
+                             @ a
+                             1#
+                             dt
+                             x3
+                             (Data.Map.Base.Tip @ Mascarpone.Symbol @ a)
+                             (Data.Map.Base.Tip @ Mascarpone.Symbol @ a) }
+                        : ipv ipv1
+                        -> case ipv of wild3 { (,) ky ds3 ->
+                           case kx of wild4 {
+                             Mascarpone.Chr a1
+                             -> case ky of wild5 {
+                                  Mascarpone.Chr b1
+                                  -> case a1 of wild6 { GHC.Types.C# c1 ->
+                                     case b1 of wild7 { GHC.Types.C# c2 ->
+                                     case GHC.Prim.tagToEnum#
+                                            @ GHC.Types.Bool
+                                            (GHC.Prim.geChar# c1 c2) of wild8 {
+                                       GHC.Types.False
+                                       -> Mascarpone.$wpoly_go10
+                                            @ a
+                                            1#
+                                            (Data.Map.Base.Bin
+                                               @ Mascarpone.Symbol
+                                               @ a
+                                               1#
+                                               wild4
+                                               x3
+                                               (Data.Map.Base.Tip @ Mascarpone.Symbol @ a)
+                                               (Data.Map.Base.Tip @ Mascarpone.Symbol @ a))
+                                            wild2
+                                       GHC.Types.True
+                                       -> Mascarpone.$sfromList1
+                                            @ a
+                                            (Data.Map.Base.Bin
+                                               @ Mascarpone.Symbol
+                                               @ a
+                                               1#
+                                               wild4
+                                               x3
+                                               (Data.Map.Base.Tip @ Mascarpone.Symbol @ a)
+                                               (Data.Map.Base.Tip @ Mascarpone.Symbol @ a))
+                                            wild2 } } }
+                                  Mascarpone.Num ipv2
+                                  -> Mascarpone.$wpoly_go10
+                                       @ a
+                                       1#
+                                       (Data.Map.Base.Bin
+                                          @ Mascarpone.Symbol
+                                          @ a
+                                          1#
+                                          wild4
+                                          x3
+                                          (Data.Map.Base.Tip @ Mascarpone.Symbol @ a)
+                                          (Data.Map.Base.Tip @ Mascarpone.Symbol @ a))
+                                       wild2 }
+                             Mascarpone.Num a1
+                             -> case ky of wild5 {
+                                  Mascarpone.Chr ipv2
+                                  -> Mascarpone.$sfromList1
+                                       @ a
+                                       (Data.Map.Base.Bin
+                                          @ Mascarpone.Symbol
+                                          @ a
+                                          1#
+                                          wild4
+                                          x3
+                                          (Data.Map.Base.Tip @ Mascarpone.Symbol @ a)
+                                          (Data.Map.Base.Tip @ Mascarpone.Symbol @ a))
+                                       wild2
+                                  Mascarpone.Num b1
+                                  -> case a1 of wild6 { GHC.Types.D# x4 ->
+                                     case b1 of wild7 { GHC.Types.D# y ->
+                                     case GHC.Prim.tagToEnum#
+                                            @ GHC.Types.Bool
+                                            (GHC.Prim.>=## x4 y) of wild8 {
+                                       GHC.Types.False
+                                       -> Mascarpone.$wpoly_go10
+                                            @ a
+                                            1#
+                                            (Data.Map.Base.Bin
+                                               @ Mascarpone.Symbol
+                                               @ a
+                                               1#
+                                               wild4
+                                               x3
+                                               (Data.Map.Base.Tip @ Mascarpone.Symbol @ a)
+                                               (Data.Map.Base.Tip @ Mascarpone.Symbol @ a))
+                                            wild2
+                                       GHC.Types.True
+                                       -> Mascarpone.$sfromList1
+                                            @ a
+                                            (Data.Map.Base.Bin
+                                               @ Mascarpone.Symbol
+                                               @ a
+                                               1#
+                                               wild4
+                                               x3
+                                               (Data.Map.Base.Tip @ Mascarpone.Symbol @ a)
+                                               (Data.Map.Base.Tip @ Mascarpone.Symbol @ a))
+                                            wild2 } } } } } } } } }) -}
+cf30a289f91f33ed58e0265e485aa6cf
+  $sfromList1 ::
+    Data.Map.Base.Map Mascarpone.Symbol a1
+    -> [(Mascarpone.Symbol, a1)]
+    -> Data.Map.Base.Map Mascarpone.Symbol a1
+  {- Arity: 2, Strictness: <S,1*U><S,1*U> -}
+cd2e008b156792c0740ff9cb3433ac0d
+  $sinsert_$sgo10 ::
+    Mascarpone.Symbol
+    -> a1
+    -> Data.Map.Base.Map Mascarpone.Symbol a1
+    -> Data.Map.Base.Map Mascarpone.Symbol a1
+  {- Arity: 3, Strictness: <S,1*U><L,U><S,1*U> -}
+de38902283302e884696bc80e9ce13be
+  $slookup1 ::
+    Mascarpone.Symbol
+    -> Data.Map.Base.Map Mascarpone.Symbol a -> GHC.Base.Maybe a
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U> -}
+8eb426931d24d0481cfe8648e4a5c60f
   $tc'Chr :: GHC.Types.TyCon
-d1a4c77417154394dea41878081e98d8
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   8452142650391828476##
+                   6734814833464037699##
+                   Mascarpone.$trModule
+                   Mascarpone.$tc'Chr1) -}
+f7ecb48efe9218855f61f4eab0c0a786
+  $tc'Chr1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Chr"#) -}
+d6d1ba161d73f1cee1d8589262eab602
   $tc'Interpreter :: GHC.Types.TyCon
-efdac3612c30f89a05751cc54d3c026c
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   1811055453641304844##
+                   17591337214753679893##
+                   Mascarpone.$trModule
+                   Mascarpone.$tc'Interpreter1) -}
+277e23f2286c57d8a7ebfd09a3a4cc5c
+  $tc'Interpreter1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Interpreter"#) -}
+79b6e2fc787fbdffb7e4a74f326c47c6
   $tc'Intr :: GHC.Types.TyCon
-04d3a6653ed5e8d6dd4d3060ec59f707
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   6609818685683453694##
+                   14584530743204546621##
+                   Mascarpone.$trModule
+                   Mascarpone.$tc'Intr1) -}
+236f86da3f2ac184259de531a0eb6cd5
+  $tc'Intr1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Intr"#) -}
+6ff167a221c3ccf2216e319d79797782
   $tc'Num :: GHC.Types.TyCon
-d6e29acffbe70638077cf2b2efa6eea6
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   14878970356845600936##
+                   8553253098799105071##
+                   Mascarpone.$trModule
+                   Mascarpone.$tc'Num1) -}
+f30bfc084096e5dbae7381a5428d5079
+  $tc'Num1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Num"#) -}
+ccbbed4b13cd41959b8ee91b2e6a9d0d
   $tc'Op :: GHC.Types.TyCon
-1953f450a28d0c54749fed3cc339926a
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   17146236326384697807##
+                   7382135013785778726##
+                   Mascarpone.$trModule
+                   Mascarpone.$tc'Op1) -}
+08be3c74d0154467b3665820cc78ad86
+  $tc'Op1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Op"#) -}
+3bcec9fa2219f3a68d1263325c750413
   $tc'State :: GHC.Types.TyCon
-6f7931b0bf0a01159aa774be2ab940fa
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   281107883924945915##
+                   8669734293189903636##
+                   Mascarpone.$trModule
+                   Mascarpone.$tc'State1) -}
+e1e36e8910fd9c4598935988ce164513
+  $tc'State1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'State"#) -}
+689494909c490beb7347af90881e135b
   $tc'Symb :: GHC.Types.TyCon
-f1348f95f79a73e32d70534b27c53956
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   14191924000093539098##
+                   2669804696974312816##
+                   Mascarpone.$trModule
+                   Mascarpone.$tc'Symb1) -}
+007f58dab2345fbe1db4a39d897b9233
+  $tc'Symb1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Symb"#) -}
+41706586a36d07576235363edab3874f
   $tcInterpreter :: GHC.Types.TyCon
-28e84490784733beccfeedf2416f9bad
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   2787614150638261314##
+                   9418951468561320110##
+                   Mascarpone.$trModule
+                   Mascarpone.$tcInterpreter1) -}
+f36285e34cfb2cfda699401815006c36
+  $tcInterpreter1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Interpreter"#) -}
+c5bc9047f8d386532e43234655a3405b
   $tcProgState :: GHC.Types.TyCon
-82c9d457ae03675153da7c59e4800b03
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   7423886089257362551##
+                   1228094113233276251##
+                   Mascarpone.$trModule
+                   Mascarpone.$tcProgState1) -}
+2899807cad95abbbbd2466c178f9d80b
+  $tcProgState1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "ProgState"#) -}
+36b2a1359bc5e40e95c853c8bdf756f3
   $tcStackElem :: GHC.Types.TyCon
-1e28be9a45c3407098a33415a669c5a6
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   2688748399586037591##
+                   8083883271696237298##
+                   Mascarpone.$trModule
+                   Mascarpone.$tcStackElem1) -}
+c1badc301317cc959526e7bfcda48d0d
+  $tcStackElem1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "StackElem"#) -}
+4cbe8bf0c809e5b356d62d9ed525aaff
   $tcSymbol :: GHC.Types.TyCon
-b5ceaedd1b785d2ff5254da1b008bd96
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   6427243012925024343##
+                   6826725350639391973##
+                   Mascarpone.$trModule
+                   Mascarpone.$tcSymbol1) -}
+40b949df6a0329571e19254548da2c14
+  $tcSymbol1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Symbol"#) -}
+6003a1d71e0be9fe8a9d70eb5e6cd7cf
   $trModule :: GHC.Types.Module
-18798391c85a24eba1c4aa89a9e5d7c2
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Mascarpone.$trModule2
+                   Mascarpone.$trModule1) -}
+0e703aa73154b7e2636a56054e26cb10
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Mascarpone"#) -}
+1322f398431715a089e76d7c94b25459
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "main"#) -}
+399d47d0253de537ec0385742e458ee9
+  $w$cmappend ::
+    Data.Map.Base.Map Mascarpone.Symbol Mascarpone.Effect
+    -> Mascarpone.Interpreter
+    -> Data.Map.Base.Map Mascarpone.Symbol Mascarpone.Effect
+    -> (Mascarpone.Symbol -> Mascarpone.Effect)
+    -> (# Data.Map.Base.Map Mascarpone.Symbol Mascarpone.Effect,
+          Mascarpone.Interpreter, Mascarpone.Symbol -> Mascarpone.Effect #)
+  {- Arity: 4, Strictness: <L,1*U><L,U><L,1*U><L,C(U)>, Inline: [0],
+     Unfolding: (\ (ww :: Data.Map.Base.Map
+                            Mascarpone.Symbol Mascarpone.Effect)
+                   (ww1 :: Mascarpone.Interpreter)
+                   (ww2 :: Data.Map.Base.Map Mascarpone.Symbol Mascarpone.Effect)
+                   (ww3 :: Mascarpone.Symbol -> Mascarpone.Effect) ->
+                 (# case ww of wild {
+                      Data.Map.Base.Bin ipv ipv1 ipv2 ipv3 ipv4
+                      -> case ww2 of wild1 {
+                           Data.Map.Base.Bin ipv5 ipv6 ipv7 ipv8 ipv9
+                           -> Data.Map.Base.union_$shedgeUnion
+                                @ (Control.Monad.Trans.State.Lazy.StateT
+                                     Mascarpone.ProgState GHC.Types.IO ())
+                                @ Mascarpone.Symbol
+                                ipv5
+                                ipv6
+                                ipv7
+                                ipv8
+                                ipv9
+                                ipv
+                                ipv1
+                                ipv2
+                                ipv3
+                                ipv4
+                                (Data.Map.Base.NothingS @ Mascarpone.Symbol)
+                                (Data.Map.Base.NothingS @ Mascarpone.Symbol)
+                                Mascarpone.$fOrdSymbol
+                           Data.Map.Base.Tip -> wild }
+                      Data.Map.Base.Tip -> ww2 },
+                    ww1, \ (eta :: Mascarpone.Symbol) -> ww3 eta #)) -}
+f686db1eb2314668a5f530b3cca68098
+  $w$cshowsPrec ::
+    GHC.Prim.Int# -> Mascarpone.Symbol -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,U><S,1*U>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#) (w :: Mascarpone.Symbol) ->
+                 case w of wild {
+                   Mascarpone.Chr b1
+                   -> case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.>=# ww 11#) of wild1 {
+                        GHC.Types.False
+                        -> \ (x3 :: GHC.Base.String) ->
+                           GHC.Base.++
+                             @ GHC.Types.Char
+                             Mascarpone.$fShowSymbol4
+                             (case b1 of ww1 { GHC.Types.C# ww2 ->
+                              case ww2 of ds {
+                                DEFAULT
+                                -> GHC.Types.:
+                                     @ GHC.Types.Char
+                                     GHC.Show.shows14
+                                     (GHC.Show.$wshowLitChar
+                                        ds
+                                        (GHC.Types.: @ GHC.Types.Char GHC.Show.shows14 x3))
+                                '\''# -> GHC.Base.++ @ GHC.Types.Char GHC.Show.shows13 x3 } })
+                        GHC.Types.True
+                        -> \ (x3 :: GHC.Base.String) ->
+                           GHC.Types.:
+                             @ GHC.Types.Char
+                             GHC.Show.shows7
+                             (GHC.Base.++
+                                @ GHC.Types.Char
+                                Mascarpone.$fShowSymbol4
+                                (case b1 of ww1 { GHC.Types.C# ww2 ->
+                                 case ww2 of ds {
+                                   DEFAULT
+                                   -> GHC.Types.:
+                                        @ GHC.Types.Char
+                                        GHC.Show.shows14
+                                        (GHC.Show.$wshowLitChar
+                                           ds
+                                           (GHC.Types.:
+                                              @ GHC.Types.Char
+                                              GHC.Show.shows14
+                                              (GHC.Types.: @ GHC.Types.Char GHC.Show.shows4 x3)))
+                                   '\''#
+                                   -> GHC.Base.++
+                                        @ GHC.Types.Char
+                                        GHC.Show.shows13
+                                        (GHC.Types.: @ GHC.Types.Char GHC.Show.shows4 x3) } })) }
+                   Mascarpone.Num b1
+                   -> let {
+                        g :: GHC.Base.String -> GHC.Base.String
+                        = case b1 of ww1 { GHC.Types.D# ww2 ->
+                          GHC.Float.$w$sshowSignedFloat
+                            GHC.Float.$fShowDouble_$sshowFloat
+                            Mascarpone.$fShowSymbol3
+                            ww2 }
+                      } in
+                      case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.>=# ww 11#) of wild1 {
+                        GHC.Types.False
+                        -> \ (x3 :: GHC.Base.String) ->
+                           GHC.Base.++ @ GHC.Types.Char Mascarpone.$fShowSymbol2 (g x3)
+                        GHC.Types.True
+                        -> \ (x3 :: GHC.Base.String) ->
+                           GHC.Types.:
+                             @ GHC.Types.Char
+                             GHC.Show.shows7
+                             (GHC.Base.++
+                                @ GHC.Types.Char
+                                Mascarpone.$fShowSymbol2
+                                (g (GHC.Types.: @ GHC.Types.Char GHC.Show.shows4 x3))) } }) -}
+ac88b034ccde2442595ca090580cfaee
+  $wcreate ::
+    Mascarpone.Interpreter
+    -> [Mascarpone.StackElem]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Mascarpone.ProgState) #)
+  {- Arity: 3, Strictness: <L,U><S,1*U><S,U>, Inline: [0],
+     Unfolding: (\ (ww :: Mascarpone.Interpreter)
+                   (ww1 :: [Mascarpone.StackElem])
+                   (w :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case ww1 of wild {
+                   []
+                   -> case Mascarpone.create3
+                      ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                ((), Mascarpone.ProgState) #)
+                      of {}
+                   : x3 xs
+                   -> case x3 of wild1 {
+                        DEFAULT
+                        -> GHC.IO.failIO1
+                             @ ((), Mascarpone.ProgState)
+                             Mascarpone.create_str
+                             w
+                        Mascarpone.Intr i
+                        -> case Mascarpone.$wpopString ww xs w of ds1 { (#,#) ipv ipv1 ->
+                           (# ipv,
+                              (GHC.Tuple.(),
+                               case ipv1 of wild2 { (,) a1 s' ->
+                               case s' of wild3 { Mascarpone.State ds ds2 ->
+                               Mascarpone.State
+                                 ds
+                                 (GHC.Types.:
+                                    @ Mascarpone.StackElem
+                                    (Mascarpone.Op
+                                       (\ (w1 :: Mascarpone.ProgState)
+                                          (w2 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                                        Mascarpone.create2 a1 w1 w2)
+                                         `cast`
+                                       (Trans
+                                            (<Mascarpone.ProgState>_R
+                                             ->_R Sym (GHC.Types.N:IO[0]
+                                                           <((), Mascarpone.ProgState)>_R))
+                                            (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                      <Mascarpone.ProgState>_N
+                                                      <GHC.Types.IO>_R
+                                                      <()>_N))))
+                                    ds2) } }) #) } } }) -}
+bcfb685eb897ae00e3aebe5fef1cdb6b
+  $wdeepquote ::
+    Mascarpone.Interpreter
+    -> [Mascarpone.StackElem]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Mascarpone.ProgState) #)
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,U><L,U><S,U>,
+     Inline: [0] -}
+74e60b3d0f7d8d26f2d554fd43538e64
+  $wextract ::
+    Mascarpone.Interpreter
+    -> [Mascarpone.StackElem]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Mascarpone.ProgState) #)
+  {- Arity: 3, Strictness: <L,U><S,1*U><S,U>, Inline: [0],
+     Unfolding: (\ (ww :: Mascarpone.Interpreter)
+                   (ww1 :: [Mascarpone.StackElem])
+                   (w :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case ww1 of wild {
+                   []
+                   -> case Mascarpone.create3
+                      ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                ((), Mascarpone.ProgState) #)
+                      of {}
+                   : x3 xs
+                   -> case xs of wild1 {
+                        []
+                        -> case Mascarpone.create3
+                           ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                     ((), Mascarpone.ProgState) #)
+                           of {}
+                        : x4 xs1
+                        -> case x3 of wild2 {
+                             DEFAULT -> Mascarpone.$wfail3 w
+                             Mascarpone.Symb ds
+                             -> case ds of wild3 {
+                                  Mascarpone.Chr s
+                                  -> case x4 of wild4 {
+                                       DEFAULT -> Mascarpone.$wfail3 w
+                                       Mascarpone.Intr i
+                                       -> (# w,
+                                             (GHC.Tuple.(),
+                                              Mascarpone.State
+                                                ww
+                                                (GHC.Types.:
+                                                   @ Mascarpone.StackElem
+                                                   (Mascarpone.Op
+                                                      (let {
+                                                         w1 :: GHC.Base.String
+                                                         = GHC.Types.:
+                                                             @ GHC.Types.Char
+                                                             s
+                                                             (GHC.Types.[] @ GHC.Types.Char)
+                                                       } in
+                                                       (\ (w2 :: Mascarpone.ProgState)
+                                                          (w3 :: GHC.Prim.State#
+                                                                   GHC.Prim.RealWorld)[OneShot] ->
+                                                        Mascarpone.create2 w1 w2 w3)
+                                                         `cast`
+                                                       (Trans
+                                                            (<Mascarpone.ProgState>_R
+                                                             ->_R Sym (GHC.Types.N:IO[0]
+                                                                           <((),
+                                                                             Mascarpone.ProgState)>_R))
+                                                            (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                                      <Mascarpone.ProgState>_N
+                                                                      <GHC.Types.IO>_R
+                                                                      <()>_N)))))
+                                                   xs1)) #) }
+                                  Mascarpone.Num ipv -> Mascarpone.$wfail3 w } } } }) -}
+cf80993d1f86d18160f9f2163f3d5e64
+  $wfail ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          (GHC.Base.String, Mascarpone.ProgState) #)
+  {- Arity: 1, Strictness: <B,U>x, Inline: [0] -}
+032f1cf95d8c08829c8e579fae10b44f
+  $wfail1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Mascarpone.ProgState) #)
+  {- Arity: 1, Strictness: <B,U>x, Inline: [0] -}
+cb0fe442e0cc78660abaf4940da85770
+  $wfail2 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Mascarpone.ProgState) #)
+  {- Arity: 1, Strictness: <B,U>x, Inline: [0] -}
+a3d6c8cb0061b665ceec2675f34515eb
+  $wfail3 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Mascarpone.ProgState) #)
+  {- Arity: 1, Strictness: <B,U>x, Inline: [0] -}
+3453171b3fa483b65e58ef1bd85b7772
+  $wgetParent ::
+    Mascarpone.Interpreter
+    -> [Mascarpone.StackElem]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Mascarpone.ProgState) #)
+  {- Arity: 3, Strictness: <L,U><S,1*U><S,U>, Inline: [0],
+     Unfolding: (\ (ww :: Mascarpone.Interpreter)
+                   (ww1 :: [Mascarpone.StackElem])
+                   (w :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case ww1 of wild {
+                   []
+                   -> case Mascarpone.create3
+                      ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                ((), Mascarpone.ProgState) #)
+                      of {}
+                   : x3 xs
+                   -> case x3 of wild1 {
+                        DEFAULT
+                        -> GHC.IO.failIO1
+                             @ ((), Mascarpone.ProgState)
+                             Mascarpone.defCodepage_str2
+                             w
+                        Mascarpone.Intr i
+                        -> (# w,
+                              (GHC.Tuple.(),
+                               Mascarpone.State
+                                 ww
+                                 (GHC.Types.:
+                                    @ Mascarpone.StackElem
+                                    (Mascarpone.Intr
+                                       (case i of wild2 { Mascarpone.Interpreter ds ds1 ds2 ->
+                                        ds1 }))
+                                    xs)) #) } }) -}
+399d47d0253de537ec0385742e458ee9
+  $wgo ::
+    [Mascarpone.Interpreter]
+    -> (# Data.Map.Base.Map Mascarpone.Symbol Mascarpone.Effect,
+          Mascarpone.Interpreter, Mascarpone.Symbol -> Mascarpone.Effect #)
+  {- Arity: 1, Strictness: <S,1*U>, Inline: [0] -}
+f0fe7825487df83ff54b7b17f47c8fe8
+  $winstall ::
+    Mascarpone.Interpreter
+    -> [Mascarpone.StackElem]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Mascarpone.ProgState) #)
+  {- Arity: 3, Strictness: <L,U><S,1*U><S,U>, Inline: [0],
+     Unfolding: (\ (ww :: Mascarpone.Interpreter)
+                   (ww1 :: [Mascarpone.StackElem])
+                   (w :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case ww1 of wild {
+                   []
+                   -> case Mascarpone.create3
+                      ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                ((), Mascarpone.ProgState) #)
+                      of {}
+                   : x3 xs
+                   -> case xs of wild1 {
+                        []
+                        -> case Mascarpone.create3
+                           ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                     ((), Mascarpone.ProgState) #)
+                           of {}
+                        : x4 xs1
+                        -> case xs1 of wild2 {
+                             []
+                             -> case Mascarpone.create3
+                                ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                          ((), Mascarpone.ProgState) #)
+                                of {}
+                             : x5 xs2
+                             -> case x3 of wild3 {
+                                  DEFAULT -> Mascarpone.$wfail2 w
+                                  Mascarpone.Symb s
+                                  -> case x4 of wild4 {
+                                       DEFAULT -> Mascarpone.$wfail2 w
+                                       Mascarpone.Op o
+                                       -> case x5 of wild5 {
+                                            DEFAULT -> Mascarpone.$wfail2 w
+                                            Mascarpone.Intr i
+                                            -> (# w,
+                                                  (GHC.Tuple.(),
+                                                   Mascarpone.State
+                                                     ww
+                                                     (GHC.Types.:
+                                                        @ Mascarpone.StackElem
+                                                        (Mascarpone.Intr
+                                                           (case i of wild6 { Mascarpone.Interpreter ds ds1 ds2 ->
+                                                            Mascarpone.Interpreter
+                                                              (Mascarpone.$sinsert_$sgo10
+                                                                 @ (Control.Monad.Trans.State.Lazy.StateT
+                                                                      Mascarpone.ProgState
+                                                                      GHC.Types.IO
+                                                                      ())
+                                                                 s
+                                                                 o
+                                                                 ds)
+                                                              ds1
+                                                              ds2 }))
+                                                        xs2)) #) } } } } } }) -}
+9ec57b6e866a63325019f80c117e7dad
+  $woutp ::
+    Mascarpone.Interpreter
+    -> [Mascarpone.StackElem]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Mascarpone.ProgState) #)
+  {- Arity: 3, Strictness: <L,U><S,1*U><S,U>, Inline: [0],
+     Unfolding: (\ (ww :: Mascarpone.Interpreter)
+                   (ww1 :: [Mascarpone.StackElem])
+                   (w :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case ww1 of wild {
+                   []
+                   -> case Mascarpone.create3
+                      ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                ((), Mascarpone.ProgState) #)
+                      of {}
+                   : x3 xs
+                   -> case x3 of wild1 {
+                        DEFAULT
+                        -> GHC.IO.failIO1
+                             @ ((), Mascarpone.ProgState)
+                             Mascarpone.defCodepage_str
+                             w
+                        Mascarpone.Symb x4
+                        -> case x4 of wild2 {
+                             Mascarpone.Chr s
+                             -> case s of ww2 { GHC.Types.C# ww3 ->
+                                case GHC.IO.Handle.Text.$whPutChar
+                                       GHC.IO.Handle.FD.stdout
+                                       ww3
+                                       w of ds1 { (#,#) ipv ipv1 ->
+                                (# ipv, (ipv1, Mascarpone.State ww xs) #) } }
+                             Mascarpone.Num n
+                             -> case GHC.IO.Handle.Text.hPutStr2
+                                       GHC.IO.Handle.FD.stdout
+                                       (GHC.Float.$fShowDouble_$cshow n)
+                                       GHC.Types.True
+                                       w of ds1 { (#,#) ipv ipv1 ->
+                                (# ipv, (ipv1, Mascarpone.State ww xs) #) } } } }) -}
+f01cca2181d589d4b9a7744dc2538abe
+  $wpoly_go10 ::
+    GHC.Prim.Int#
+    -> Data.Map.Base.Map Mascarpone.Symbol a
+    -> [(Mascarpone.Symbol, a)]
+    -> Data.Map.Base.Map Mascarpone.Symbol a
+  {- Arity: 3, Strictness: <L,U><S,1*U><S,1*U>, Inline: [0] -}
+1110e4b12cf4db398a38ada5e73ce270
+  $wpop3 ::
+    Mascarpone.Interpreter
+    -> [Mascarpone.StackElem]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((Mascarpone.StackElem, Mascarpone.StackElem,
+            Mascarpone.StackElem),
+           Mascarpone.ProgState) #)
+  {- Arity: 3, Strictness: <L,U><S,1*U><S,U>, Inline: [0],
+     Unfolding: (\ (ww :: Mascarpone.Interpreter)
+                   (ww1 :: [Mascarpone.StackElem])
+                   (w :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case ww1 of wild {
+                   []
+                   -> case Mascarpone.create3
+                      ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                ((Mascarpone.StackElem, Mascarpone.StackElem,
+                                  Mascarpone.StackElem),
+                                 Mascarpone.ProgState) #)
+                      of {}
+                   : x3 xs
+                   -> case xs of wild1 {
+                        []
+                        -> case Mascarpone.create3
+                           ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                     ((Mascarpone.StackElem, Mascarpone.StackElem,
+                                       Mascarpone.StackElem),
+                                      Mascarpone.ProgState) #)
+                           of {}
+                        : x4 xs1
+                        -> case xs1 of wild2 {
+                             []
+                             -> case Mascarpone.create3
+                                ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                          ((Mascarpone.StackElem, Mascarpone.StackElem,
+                                            Mascarpone.StackElem),
+                                           Mascarpone.ProgState) #)
+                                of {}
+                             : x5 xs2
+                             -> (# w, ((x3, x4, x5), Mascarpone.State ww xs2) #) } } }) -}
+850c41a83c83a8ae0e1bd0c54cfbd71c
+  $wpop4 ::
+    Mascarpone.Interpreter
+    -> [Mascarpone.StackElem]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((Mascarpone.StackElem, Mascarpone.StackElem, Mascarpone.StackElem,
+            Mascarpone.StackElem),
+           Mascarpone.ProgState) #)
+  {- Arity: 3, Strictness: <L,U><S,1*U><S,U>, Inline: [0],
+     Unfolding: (\ (ww :: Mascarpone.Interpreter)
+                   (ww1 :: [Mascarpone.StackElem])
+                   (w :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case ww1 of wild {
+                   []
+                   -> case Mascarpone.create3
+                      ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                ((Mascarpone.StackElem, Mascarpone.StackElem, Mascarpone.StackElem,
+                                  Mascarpone.StackElem),
+                                 Mascarpone.ProgState) #)
+                      of {}
+                   : x3 xs
+                   -> case xs of wild1 {
+                        []
+                        -> case Mascarpone.create3
+                           ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                     ((Mascarpone.StackElem, Mascarpone.StackElem,
+                                       Mascarpone.StackElem, Mascarpone.StackElem),
+                                      Mascarpone.ProgState) #)
+                           of {}
+                        : x4 xs1
+                        -> case xs1 of wild2 {
+                             []
+                             -> case Mascarpone.create3
+                                ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                          ((Mascarpone.StackElem, Mascarpone.StackElem,
+                                            Mascarpone.StackElem, Mascarpone.StackElem),
+                                           Mascarpone.ProgState) #)
+                                of {}
+                             : x5 xs2
+                             -> case xs2 of wild3 {
+                                  []
+                                  -> case Mascarpone.create3
+                                     ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                               ((Mascarpone.StackElem, Mascarpone.StackElem,
+                                                 Mascarpone.StackElem, Mascarpone.StackElem),
+                                                Mascarpone.ProgState) #)
+                                     of {}
+                                  : x6 xs3
+                                  -> (# w,
+                                        ((x3, x4, x5, x6), Mascarpone.State ww xs3) #) } } } }) -}
+25793e86cef72e677a52502e6fe58e38
+  $wpopString ::
+    Mascarpone.Interpreter
+    -> [Mascarpone.StackElem]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          (GHC.Base.String, Mascarpone.ProgState) #)
+  {- Arity: 3, Strictness: <L,U><S,1*U><S,U>, Inline: [0],
+     Unfolding: (\ (ww :: Mascarpone.Interpreter)
+                   (ww1 :: [Mascarpone.StackElem])
+                   (w :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case ww1 of wild {
+                   []
+                   -> case Mascarpone.create3
+                      ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                (GHC.Base.String, Mascarpone.ProgState) #)
+                      of {}
+                   : x3 xs
+                   -> case x3 of wild1 {
+                        DEFAULT -> Mascarpone.$wfail w
+                        Mascarpone.Symb ds
+                        -> case ds of wild2 {
+                             Mascarpone.Chr ds1
+                             -> case ds1 of wild3 { GHC.Types.C# ds2 ->
+                                case ds2 of ds3 {
+                                  DEFAULT -> Mascarpone.$wfail w
+                                  ']'# -> Mascarpone.$wpopString' ww xs w } }
+                             Mascarpone.Num ipv -> Mascarpone.$wfail w } } }) -}
+4f3ca001e9cacf14cdb0cb0a0c1b81f8
+  $wpopString' ::
+    Mascarpone.Interpreter
+    -> [Mascarpone.StackElem]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ([GHC.Types.Char], Mascarpone.ProgState) #)
+  {- Arity: 3, Strictness: <L,U><S,1*U><S,U>, Inline: [0] -}
+4cb351c9fa8cf09b653c46b366a5bec1
+  $wquotesym ::
+    Mascarpone.Interpreter
+    -> [Mascarpone.StackElem]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Mascarpone.ProgState) #)
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,U><L,U><S,U>,
+     Inline: [0],
+     Unfolding: (\ (ww :: Mascarpone.Interpreter)
+                   (ww1 :: [Mascarpone.StackElem])
+                   (w :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 (# w,
+                    (GHC.Tuple.(),
+                     Mascarpone.State
+                       (Mascarpone.Interpreter
+                          (Data.Map.Base.Tip @ Mascarpone.Symbol @ Mascarpone.Effect)
+                          ww
+                          (\ (c :: Mascarpone.Symbol)
+                             (eta :: Mascarpone.ProgState)
+                             (eta1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                           case eta of wild { Mascarpone.State ds ds1 ->
+                           (# eta1,
+                              (GHC.Tuple.(),
+                               Mascarpone.State
+                                 ww
+                                 (GHC.Types.: @ Mascarpone.StackElem (Mascarpone.Symb c) ds1)) #) })
+                            `cast`
+                          (<Mascarpone.Symbol>_R
+                           ->_R Trans
+                                    (<Mascarpone.ProgState>_R
+                                     ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                                    (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                              <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))))
+                       ww1) #)) -}
+87cfc56815736521e8eaa59236600f01
+  $wsetParent ::
+    Mascarpone.Interpreter
+    -> [Mascarpone.StackElem]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Mascarpone.ProgState) #)
+  {- Arity: 3, Strictness: <L,U><S,1*U><S,U>, Inline: [0],
+     Unfolding: (\ (ww :: Mascarpone.Interpreter)
+                   (ww1 :: [Mascarpone.StackElem])
+                   (w :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case ww1 of wild {
+                   []
+                   -> case Mascarpone.create3
+                      ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                ((), Mascarpone.ProgState) #)
+                      of {}
+                   : x3 xs
+                   -> case xs of wild1 {
+                        []
+                        -> case Mascarpone.create3
+                           ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                     ((), Mascarpone.ProgState) #)
+                           of {}
+                        : x4 xs1
+                        -> case x3 of wild2 {
+                             DEFAULT -> Mascarpone.$wfail1 w
+                             Mascarpone.Intr i
+                             -> case x4 of wild3 {
+                                  DEFAULT -> Mascarpone.$wfail1 w
+                                  Mascarpone.Intr j
+                                  -> (# w,
+                                        (GHC.Tuple.(),
+                                         Mascarpone.State
+                                           ww
+                                           (GHC.Types.:
+                                              @ Mascarpone.StackElem
+                                              (Mascarpone.Intr
+                                                 (case i of wild4 { Mascarpone.Interpreter ds ds1 ds2 ->
+                                                  Mascarpone.Interpreter ds j ds2 }))
+                                              xs1)) #) } } } }) -}
+755b284d6c934da161b9852a957925b5
+  $wswap ::
+    Mascarpone.Interpreter
+    -> [Mascarpone.StackElem]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Mascarpone.ProgState) #)
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,U><S,U><S,U>,
+     Inline: [0],
+     Unfolding: (\ (ww :: Mascarpone.Interpreter)
+                   (ww1 :: [Mascarpone.StackElem])
+                   (w :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case ww1 of wild {
+                   []
+                   -> (# w,
+                         (GHC.Tuple.(),
+                          Mascarpone.State ww (GHC.Types.[] @ Mascarpone.StackElem)) #)
+                   : x3 ds
+                   -> case ds of wild1 {
+                        [] -> (# w, (GHC.Tuple.(), Mascarpone.State ww wild) #)
+                        : y ys
+                        -> (# w,
+                              (GHC.Tuple.(),
+                               Mascarpone.State
+                                 ww
+                                 (GHC.Types.:
+                                    @ Mascarpone.StackElem
+                                    y
+                                    (GHC.Types.: @ Mascarpone.StackElem x3 ys))) #) } }) -}
+8009bf7e07642476cb42706dfb944ebe
+  $wuniform ::
+    Mascarpone.Interpreter
+    -> [Mascarpone.StackElem]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Mascarpone.ProgState) #)
+  {- Arity: 3, Strictness: <L,U><S,1*U><S,U>, Inline: [0],
+     Unfolding: (\ (ww :: Mascarpone.Interpreter)
+                   (ww1 :: [Mascarpone.StackElem])
+                   (w :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case ww1 of wild {
+                   []
+                   -> case Mascarpone.create3
+                      ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                ((), Mascarpone.ProgState) #)
+                      of {}
+                   : x3 xs
+                   -> case x3 of wild1 {
+                        DEFAULT
+                        -> GHC.IO.failIO1
+                             @ ((), Mascarpone.ProgState)
+                             Mascarpone.defCodepage_str1
+                             w
+                        Mascarpone.Op o
+                        -> (# w,
+                              (GHC.Tuple.(),
+                               Mascarpone.State
+                                 ww
+                                 (GHC.Types.:
+                                    @ Mascarpone.StackElem
+                                    (Mascarpone.Intr
+                                       (Mascarpone.Interpreter
+                                          (Data.Map.Base.Tip
+                                             @ Mascarpone.Symbol
+                                             @ Mascarpone.Effect)
+                                          ww
+                                          (\ (ds :: Mascarpone.Symbol) -> o)))
+                                    xs)) #) } }) -}
+399d47d0253de537ec0385742e458ee9
   type Effect =
     Control.Monad.Trans.State.Lazy.StateT
       Mascarpone.ProgState GHC.Types.IO ()
-18798391c85a24eba1c4aa89a9e5d7c2
+399d47d0253de537ec0385742e458ee9
   data Interpreter
     = Interpreter {codepage :: Data.Map.Base.Map
                                  Mascarpone.Symbol Mascarpone.Effect,
                    parent :: Mascarpone.Interpreter,
                    fallback :: Mascarpone.Symbol -> Mascarpone.Effect}
     RecFlag: Recursive
-18798391c85a24eba1c4aa89a9e5d7c2
+399d47d0253de537ec0385742e458ee9
   data ProgState
     = State {interpreter :: Mascarpone.Interpreter,
              stack :: [Mascarpone.StackElem]}
     RecFlag: Recursive
-18798391c85a24eba1c4aa89a9e5d7c2
+399d47d0253de537ec0385742e458ee9
   data StackElem
     = Symb Mascarpone.Symbol
     | Op Mascarpone.Effect
     | Intr Mascarpone.Interpreter
-086464ff72e3a9c935ff156588f779c7
+f686db1eb2314668a5f530b3cca68098
   data Symbol = Chr GHC.Types.Char | Num GHC.Types.Double
-e2562fcf45af420854d2e948aed7dc8b
+87e2a70a400dedd1fdd341f2672a0413
   codepage ::
     Mascarpone.Interpreter
     -> Data.Map.Base.Map Mascarpone.Symbol Mascarpone.Effect
   RecSel Left Mascarpone.Interpreter
-c0f021b8b519dc082491bb3ec84c5a98
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SLL),1*U(1*U,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Mascarpone.Interpreter) ->
+                 case ds of wild { Mascarpone.Interpreter ds1 ds2 ds3 -> ds1 }) -}
+c47ac13dbeb8a0bfa5c2398c743141e6
   create ::
     Control.Monad.Trans.State.Lazy.StateT
       Mascarpone.ProgState GHC.Types.IO ()
-89d041fe6cd30d73da1103e5a52b3f84
+  {- Arity: 2, Strictness: <S(LS),1*U(U,1*U)><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Mascarpone.create1
+                  `cast`
+                (Trans
+                     (<Mascarpone.ProgState>_R
+                      ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                     (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                               <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))) -}
+cbd3cff5c64e66068c7009a0a5e245b0
+  create1 ::
+    Mascarpone.ProgState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Mascarpone.ProgState) #)
+  {- Arity: 2, Strictness: <S(LS),1*U(U,1*U)><S,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Mascarpone.ProgState)
+                   (w1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case w of ww { Mascarpone.State ww1 ww2 ->
+                 Mascarpone.$wcreate ww1 ww2 w1 }) -}
+bbf2d87c57542833e33b9b3b0878a526
+  create2 ::
+    [GHC.Types.Char]
+    -> Mascarpone.ProgState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Mascarpone.ProgState) #)
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S,1*U><L,U(U(U,U,U),U)><S,U> -}
+14a89fbbe0d92d3867e1dce1fc52f84d
+  create3 ::
+    Control.Monad.Trans.State.Lazy.StateT
+      Mascarpone.ProgState GHC.Types.IO Mascarpone.StackElem
+  {- Strictness: x -}
+efc5a5da55198c4bbea3eb47099d2ece
+  create_str :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Pattern match failure in do expression at app/Mascarpone.hs:144:3-8"#) -}
+972e2f9b363319a6c237464c6b174936
   deepquote ::
     Control.Monad.Trans.State.Lazy.StateT
       Mascarpone.ProgState GHC.Types.IO ()
-b9dfc24c0d904b3acfc091f04c73545f
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U(U,U)><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Mascarpone.deepquote1
+                  `cast`
+                (Trans
+                     (<Mascarpone.ProgState>_R
+                      ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                     (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                               <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))) -}
+9f59dcd9246789d67e0f89d2cf3296e3
+  deepquote1 ::
+    Mascarpone.ProgState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Mascarpone.ProgState) #)
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U(U,U)><S,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Mascarpone.ProgState)
+                   (w1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case w of ww { Mascarpone.State ww1 ww2 ->
+                 Mascarpone.$wdeepquote ww1 ww2 w1 }) -}
+dfa84a0bd5d9281e92a7624985aaef15
   defCodepage ::
     Data.Map.Base.Map
       Mascarpone.Symbol
       (Control.Monad.Trans.State.Lazy.StateT
          Mascarpone.ProgState GHC.Types.IO ())
-96380f6979b661cc12e63eaf75e1de48
+  {- Unfolding: (Mascarpone.$sfromList
+                   @ (Control.Monad.Trans.State.Lazy.StateT
+                        Mascarpone.ProgState GHC.Types.IO ())
+                   Mascarpone.defCodepage1) -}
+9ad708e74b52cf9d4764d1923052e5ec
+  defCodepage1 ::
+    [(Mascarpone.Symbol,
+      Control.Monad.Trans.State.Lazy.StateT
+        Mascarpone.ProgState GHC.Types.IO ())]
+  {- Unfolding: (GHC.Types.:
+                   @ (Mascarpone.Symbol,
+                      Control.Monad.Trans.State.Lazy.StateT
+                        Mascarpone.ProgState GHC.Types.IO ())
+                   Mascarpone.defCodepage86
+                   Mascarpone.defCodepage2) -}
+989f561b4b5d9174ed02fe838a0c78e5
+  defCodepage10 ::
+    [(Mascarpone.Symbol,
+      Control.Monad.Trans.State.Lazy.StateT
+        Mascarpone.ProgState GHC.Types.IO ())]
+  {- Unfolding: (GHC.Types.:
+                   @ (Mascarpone.Symbol,
+                      Control.Monad.Trans.State.Lazy.StateT
+                        Mascarpone.ProgState GHC.Types.IO ())
+                   Mascarpone.defCodepage50
+                   Mascarpone.defCodepage11) -}
+1757b99975f6a18bcea9ee83e9db4506
+  defCodepage11 ::
+    [(Mascarpone.Symbol,
+      Control.Monad.Trans.State.Lazy.StateT
+        Mascarpone.ProgState GHC.Types.IO ())]
+  {- Unfolding: (GHC.Types.:
+                   @ (Mascarpone.Symbol,
+                      Control.Monad.Trans.State.Lazy.StateT
+                        Mascarpone.ProgState GHC.Types.IO ())
+                   Mascarpone.defCodepage46
+                   Mascarpone.defCodepage12) -}
+4d301ccf9d43e6be30bad3db9d42cd18
+  defCodepage12 ::
+    [(Mascarpone.Symbol,
+      Control.Monad.Trans.State.Lazy.StateT
+        Mascarpone.ProgState GHC.Types.IO ())]
+  {- Unfolding: (GHC.Types.:
+                   @ (Mascarpone.Symbol,
+                      Control.Monad.Trans.State.Lazy.StateT
+                        Mascarpone.ProgState GHC.Types.IO ())
+                   Mascarpone.defCodepage43
+                   Mascarpone.defCodepage13) -}
+3ae1c81eb3bb5682309b6ea6f9cb8e00
+  defCodepage13 ::
+    [(Mascarpone.Symbol,
+      Control.Monad.Trans.State.Lazy.StateT
+        Mascarpone.ProgState GHC.Types.IO ())]
+  {- Unfolding: (GHC.Types.:
+                   @ (Mascarpone.Symbol,
+                      Control.Monad.Trans.State.Lazy.StateT
+                        Mascarpone.ProgState GHC.Types.IO ())
+                   Mascarpone.defCodepage39
+                   Mascarpone.defCodepage14) -}
+6c37141ee8c17a6d493069bf302168eb
+  defCodepage14 ::
+    [(Mascarpone.Symbol,
+      Control.Monad.Trans.State.Lazy.StateT
+        Mascarpone.ProgState GHC.Types.IO ())]
+  {- Unfolding: (GHC.Types.:
+                   @ (Mascarpone.Symbol,
+                      Control.Monad.Trans.State.Lazy.StateT
+                        Mascarpone.ProgState GHC.Types.IO ())
+                   Mascarpone.defCodepage35
+                   Mascarpone.defCodepage15) -}
+361fb62224139b142150485ada437784
+  defCodepage15 ::
+    [(Mascarpone.Symbol,
+      Control.Monad.Trans.State.Lazy.StateT
+        Mascarpone.ProgState GHC.Types.IO ())]
+  {- Unfolding: (GHC.Types.:
+                   @ (Mascarpone.Symbol,
+                      Control.Monad.Trans.State.Lazy.StateT
+                        Mascarpone.ProgState GHC.Types.IO ())
+                   Mascarpone.defCodepage31
+                   Mascarpone.defCodepage16) -}
+0120eb2cca07aebe9b502637a73ce0eb
+  defCodepage16 ::
+    [(Mascarpone.Symbol,
+      Control.Monad.Trans.State.Lazy.StateT
+        Mascarpone.ProgState GHC.Types.IO ())]
+  {- Unfolding: (GHC.Types.:
+                   @ (Mascarpone.Symbol,
+                      Control.Monad.Trans.State.Lazy.StateT
+                        Mascarpone.ProgState GHC.Types.IO ())
+                   Mascarpone.defCodepage27
+                   Mascarpone.defCodepage17) -}
+47c2dd09834faf6f120c6f9c7dd12d2c
+  defCodepage17 ::
+    [(Mascarpone.Symbol,
+      Control.Monad.Trans.State.Lazy.StateT
+        Mascarpone.ProgState GHC.Types.IO ())]
+  {- Unfolding: (GHC.Types.:
+                   @ (Mascarpone.Symbol,
+                      Control.Monad.Trans.State.Lazy.StateT
+                        Mascarpone.ProgState GHC.Types.IO ())
+                   Mascarpone.defCodepage23
+                   Mascarpone.defCodepage18) -}
+9a1e59ab6a903641d73cfc2af8503545
+  defCodepage18 ::
+    [(Mascarpone.Symbol,
+      Control.Monad.Trans.State.Lazy.StateT
+        Mascarpone.ProgState GHC.Types.IO ())]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ (Mascarpone.Symbol,
+                      Control.Monad.Trans.State.Lazy.StateT
+                        Mascarpone.ProgState GHC.Types.IO ())
+                   Mascarpone.defCodepage19
+                   (GHC.Types.[]
+                      @ (Mascarpone.Symbol,
+                         Control.Monad.Trans.State.Lazy.StateT
+                           Mascarpone.ProgState GHC.Types.IO ()))) -}
+059e7889a09a7970c6d4b95a4d2988a3
+  defCodepage19 ::
+    (Mascarpone.Symbol,
+     Control.Monad.Trans.State.Lazy.StateT
+       Mascarpone.ProgState GHC.Types.IO ())
+  {- HasNoCafRefs,
+     Unfolding: ((Mascarpone.defCodepage21,
+                  Mascarpone.defCodepage20
+                    `cast`
+                  (Trans
+                       (<Mascarpone.ProgState>_R
+                        ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                       (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                 <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))))) -}
+c23d0bdc0275c9e437bbf0dd4ca0ad30
+  defCodepage2 ::
+    [(Mascarpone.Symbol,
+      Control.Monad.Trans.State.Lazy.StateT
+        Mascarpone.ProgState GHC.Types.IO ())]
+  {- Unfolding: (GHC.Types.:
+                   @ (Mascarpone.Symbol,
+                      Control.Monad.Trans.State.Lazy.StateT
+                        Mascarpone.ProgState GHC.Types.IO ())
+                   Mascarpone.defCodepage81
+                   Mascarpone.defCodepage3) -}
+84ccb299eb2416b869ea30d01bcf6a95
+  defCodepage20 ::
+    Mascarpone.ProgState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Mascarpone.ProgState) #)
+  {- Arity: 2, HasNoCafRefs, Strictness: <S(LS),1*U(U,U)><S,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Mascarpone.ProgState)
+                   (w1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case w of ww { Mascarpone.State ww1 ww2 ->
+                 Mascarpone.$wswap ww1 ww2 w1 }) -}
+7ce53d6f9598af3694381a9f3bb0c703
+  defCodepage21 :: Mascarpone.Symbol
+  {- HasNoCafRefs,
+     Unfolding: (Mascarpone.Chr Mascarpone.defCodepage22) -}
+b77fcdd57a5addbb3a9e12652b487050
+  defCodepage22 :: GHC.Types.Char
+  {- HasNoCafRefs, Unfolding: (GHC.Types.C# '/'#) -}
+f794c6281c9be42f38eede34fb452a22
+  defCodepage23 ::
+    (Mascarpone.Symbol,
+     Control.Monad.Trans.State.Lazy.StateT
+       Mascarpone.ProgState GHC.Types.IO ())
+  {- Unfolding: ((Mascarpone.defCodepage25,
+                  Mascarpone.defCodepage24
+                    `cast`
+                  (Trans
+                       (<Mascarpone.ProgState>_R
+                        ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                       (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                 <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))))) -}
+8211790daf4e25507a44c48ad8d97155
+  defCodepage24 ::
+    Mascarpone.ProgState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Mascarpone.ProgState) #)
+  {- Arity: 2, Strictness: <S(LS),1*U(U,1*U)><S,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (s1 :: Mascarpone.ProgState)
+                   (eta :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case s1 of wild { Mascarpone.State ds ds1 ->
+                 case ds1 of wild1 {
+                   []
+                   -> case Mascarpone.create3
+                      ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                ((), Mascarpone.ProgState) #)
+                      of {}
+                   : x3 xs
+                   -> (# eta, (GHC.Tuple.(), Mascarpone.State ds xs) #) } }) -}
+01be57bcf3288d745fd332e0fbbf3404
+  defCodepage25 :: Mascarpone.Symbol
+  {- HasNoCafRefs,
+     Unfolding: (Mascarpone.Chr Mascarpone.defCodepage26) -}
+5160c1a20936fb85170ff299abc315d8
+  defCodepage26 :: GHC.Types.Char
+  {- HasNoCafRefs, Unfolding: (GHC.Types.C# '$'#) -}
+0da785a2c664e382b9acd553e44c8c0a
+  defCodepage27 ::
+    (Mascarpone.Symbol,
+     Control.Monad.Trans.State.Lazy.StateT
+       Mascarpone.ProgState GHC.Types.IO ())
+  {- HasNoCafRefs,
+     Unfolding: ((Mascarpone.defCodepage29,
+                  Mascarpone.defCodepage28
+                    `cast`
+                  (Trans
+                       (<Mascarpone.ProgState>_R
+                        ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                       (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                 <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))))) -}
+083f7531d342cc717b239b4514b82d08
+  defCodepage28 ::
+    Mascarpone.ProgState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Mascarpone.ProgState) #)
+  {- Arity: 2, HasNoCafRefs, Strictness: <S(LS),1*U(U,U)><S,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (s1 :: Mascarpone.ProgState)
+                   (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case s1 of wild { Mascarpone.State ds ds1 ->
+                 case ds1 of wild1 {
+                   [] -> (# s, (GHC.Tuple.(), wild) #)
+                   : x3 xs
+                   -> (# s,
+                         (GHC.Tuple.(),
+                          Mascarpone.State
+                            ds
+                            (GHC.Types.: @ Mascarpone.StackElem x3 wild1)) #) } }) -}
+7f78df50a408146cd84cf52b2dea30b2
+  defCodepage29 :: Mascarpone.Symbol
+  {- HasNoCafRefs,
+     Unfolding: (Mascarpone.Chr Mascarpone.defCodepage30) -}
+08f71d91bc196072cea65a7ae94569d7
+  defCodepage3 ::
+    [(Mascarpone.Symbol,
+      Control.Monad.Trans.State.Lazy.StateT
+        Mascarpone.ProgState GHC.Types.IO ())]
+  {- Unfolding: (GHC.Types.:
+                   @ (Mascarpone.Symbol,
+                      Control.Monad.Trans.State.Lazy.StateT
+                        Mascarpone.ProgState GHC.Types.IO ())
+                   Mascarpone.defCodepage77
+                   Mascarpone.defCodepage4) -}
+b777afaa336260b03d7fb9fb8bdc36f9
+  defCodepage30 :: GHC.Types.Char
+  {- HasNoCafRefs, Unfolding: (GHC.Types.C# ':'#) -}
+bbb987a9f5d828219d9dda1bcc9637b5
+  defCodepage31 ::
+    (Mascarpone.Symbol,
+     Control.Monad.Trans.State.Lazy.StateT
+       Mascarpone.ProgState GHC.Types.IO ())
+  {- Unfolding: ((Mascarpone.defCodepage33,
+                  Mascarpone.defCodepage32
+                    `cast`
+                  (Trans
+                       (<Mascarpone.ProgState>_R
+                        ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                       (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                 <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))))) -}
+6e03193b82ff9987cae1e2bdbbc5ea92
+  defCodepage32 ::
+    Mascarpone.ProgState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Mascarpone.ProgState) #)
+  {- Arity: 2, Strictness: <L,1*U(U,U)><S,U>,
+     Unfolding: (\ (s1 :: Mascarpone.ProgState)
+                   (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.IO.Handle.Internals.wantReadableHandle_1
+                        @ GHC.Types.Char
+                        GHC.IO.Handle.Text.hGetChar3
+                        GHC.IO.Handle.FD.stdin
+                        GHC.IO.Handle.Text.hGetChar2
+                          `cast`
+                        (<GHC.IO.Handle.Types.Handle__>_R
+                         ->_R Sym (GHC.Types.N:IO[0] <GHC.Types.Char>_R))
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 (# ipv,
+                    (GHC.Tuple.(),
+                     case s1 of wild { Mascarpone.State ds ds2 ->
+                     Mascarpone.State
+                       ds
+                       (GHC.Types.:
+                          @ Mascarpone.StackElem
+                          (Mascarpone.Symb (Mascarpone.Chr ipv1))
+                          ds2) }) #) }) -}
+91b0757daf5d39adec3e4605be039790
+  defCodepage33 :: Mascarpone.Symbol
+  {- HasNoCafRefs,
+     Unfolding: (Mascarpone.Chr Mascarpone.defCodepage34) -}
+ba847c86d02eb7d2b9a81099a4739d86
+  defCodepage34 :: GHC.Types.Char
+  {- HasNoCafRefs, Unfolding: (GHC.Types.C# ','#) -}
+c343725c6fe75a462723ca7dd7645322
+  defCodepage35 ::
+    (Mascarpone.Symbol,
+     Control.Monad.Trans.State.Lazy.StateT
+       Mascarpone.ProgState GHC.Types.IO ())
+  {- Unfolding: ((Mascarpone.defCodepage37,
+                  Mascarpone.defCodepage36
+                    `cast`
+                  (Trans
+                       (<Mascarpone.ProgState>_R
+                        ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                       (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                 <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))))) -}
+6555ac9b032c57b16630142b6402d3b3
+  defCodepage36 ::
+    Mascarpone.ProgState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Mascarpone.ProgState) #)
+  {- Arity: 2, Strictness: <S(LS),1*U(U,1*U)><S,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Mascarpone.ProgState)
+                   (w1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case w of ww { Mascarpone.State ww1 ww2 ->
+                 Mascarpone.$woutp ww1 ww2 w1 }) -}
+93c21333a1aa20913f6fb1aa27b0fcc2
+  defCodepage37 :: Mascarpone.Symbol
+  {- HasNoCafRefs,
+     Unfolding: (Mascarpone.Chr Mascarpone.defCodepage38) -}
+ef665cecd0f83df9f83a5332a36cb578
+  defCodepage38 :: GHC.Types.Char
+  {- HasNoCafRefs, Unfolding: (GHC.Types.C# '.'#) -}
+1e3c884de60e283bd231e41544650d14
+  defCodepage39 ::
+    (Mascarpone.Symbol,
+     Control.Monad.Trans.State.Lazy.StateT
+       Mascarpone.ProgState GHC.Types.IO ())
+  {- HasNoCafRefs,
+     Unfolding: ((Mascarpone.defCodepage41,
+                  Mascarpone.defCodepage40
+                    `cast`
+                  (Trans
+                       (<Mascarpone.ProgState>_R
+                        ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                       (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                 <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))))) -}
+e7a077f350716c3b956ddff231501cea
+  defCodepage4 ::
+    [(Mascarpone.Symbol,
+      Control.Monad.Trans.State.Lazy.StateT
+        Mascarpone.ProgState GHC.Types.IO ())]
+  {- Unfolding: (GHC.Types.:
+                   @ (Mascarpone.Symbol,
+                      Control.Monad.Trans.State.Lazy.StateT
+                        Mascarpone.ProgState GHC.Types.IO ())
+                   Mascarpone.defCodepage73
+                   Mascarpone.defCodepage5) -}
+8a9fce1fddf6791ff16faf06b650de42
+  defCodepage40 ::
+    Mascarpone.ProgState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Mascarpone.ProgState) #)
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U(U,U)><S,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Mascarpone.ProgState)
+                   (w1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case w of ww { Mascarpone.State ww1 ww2 ->
+                 Mascarpone.$wquotesym ww1 ww2 w1 }) -}
+62b7a27869c2fbd59dea300ecf49088c
+  defCodepage41 :: Mascarpone.Symbol
+  {- HasNoCafRefs,
+     Unfolding: (Mascarpone.Chr Mascarpone.defCodepage42) -}
+e5841e44aee95f0b129be08e3cae3d18
+  defCodepage42 :: GHC.Types.Char
+  {- HasNoCafRefs, Unfolding: (GHC.Types.C# '\''#) -}
+66e2de366721454af3e536ae284f8c7f
+  defCodepage43 ::
+    (Mascarpone.Symbol,
+     Control.Monad.Trans.State.Lazy.StateT
+       Mascarpone.ProgState GHC.Types.IO ())
+  {- HasNoCafRefs,
+     Unfolding: ((Mascarpone.defCodepage44,
+                  Mascarpone.deepquote1
+                    `cast`
+                  (Trans
+                       (<Mascarpone.ProgState>_R
+                        ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                       (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                 <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))))) -}
+c71d3bb537774f296cba4205766ba8d1
+  defCodepage44 :: Mascarpone.Symbol
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (Mascarpone.Chr Mascarpone.defCodepage45) -}
+024e2baaacdad84f4d744fa9eef29bef
+  defCodepage45 :: GHC.Types.Char
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.C# '['#) -}
+695b0dfa37a373b745fbceadb6aa0104
+  defCodepage46 ::
+    (Mascarpone.Symbol,
+     Control.Monad.Trans.State.Lazy.StateT
+       Mascarpone.ProgState GHC.Types.IO ())
+  {- Unfolding: ((Mascarpone.defCodepage48,
+                  Mascarpone.defCodepage47
+                    `cast`
+                  (Trans
+                       (<Mascarpone.ProgState>_R
+                        ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                       (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                 <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))))) -}
+4ce1510864a83a1fb5d3510e167d403f
+  defCodepage47 ::
+    Mascarpone.ProgState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Mascarpone.ProgState) #)
+  {- Arity: 2, Strictness: <S(LS),1*U(U,1*U)><S,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Mascarpone.ProgState)
+                   (w1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case w of ww { Mascarpone.State ww1 ww2 ->
+                 Mascarpone.$wuniform ww1 ww2 w1 }) -}
+f6d70d3038411a7e6174569d1e822a93
+  defCodepage48 :: Mascarpone.Symbol
+  {- HasNoCafRefs,
+     Unfolding: (Mascarpone.Chr Mascarpone.defCodepage49) -}
+1c94bf6bc96745c2e5af83107d7afce8
+  defCodepage49 :: GHC.Types.Char
+  {- HasNoCafRefs, Unfolding: (GHC.Types.C# '1'#) -}
+a4dc4c5641240046d37acc8d8d23e302
+  defCodepage5 ::
+    [(Mascarpone.Symbol,
+      Control.Monad.Trans.State.Lazy.StateT
+        Mascarpone.ProgState GHC.Types.IO ())]
+  {- Unfolding: (GHC.Types.:
+                   @ (Mascarpone.Symbol,
+                      Control.Monad.Trans.State.Lazy.StateT
+                        Mascarpone.ProgState GHC.Types.IO ())
+                   Mascarpone.defCodepage69
+                   Mascarpone.defCodepage6) -}
+96ec05ac9cb0bef34e85de36aff74bf0
+  defCodepage50 :: (Mascarpone.Symbol, Mascarpone.Effect)
+  {- Unfolding: ((Mascarpone.defCodepage52,
+                  Mascarpone.defCodepage51
+                    `cast`
+                  (Trans
+                       (<Mascarpone.ProgState>_R
+                        ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                       (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                 <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))))) -}
+d3f9237213ba86467291d5edfd070b22
+  defCodepage51 ::
+    Mascarpone.ProgState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Mascarpone.ProgState) #)
+  {- Arity: 2, Strictness: <L,1*U(U,U)><S,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (eta1 :: Mascarpone.ProgState)
+                   (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 (# s,
+                    (GHC.Tuple.(),
+                     case eta1 of wild { Mascarpone.State ds ds1 ->
+                     Mascarpone.State
+                       ds
+                       (GHC.Types.:
+                          @ Mascarpone.StackElem
+                          Mascarpone.defCodepage_x
+                          ds1) }) #)) -}
+db6a29f813000e830325b4fa5f9b202e
+  defCodepage52 :: Mascarpone.Symbol
+  {- HasNoCafRefs,
+     Unfolding: (Mascarpone.Chr Mascarpone.defCodepage53) -}
+bbb0d0cd629db6bd475c03516a844a81
+  defCodepage53 :: GHC.Types.Char
+  {- HasNoCafRefs, Unfolding: (GHC.Types.C# '0'#) -}
+b1cba538d4bd2ae1669349eee9994bf1
+  defCodepage54 ::
+    (Mascarpone.Symbol,
+     Control.Monad.Trans.State.Lazy.StateT
+       Mascarpone.ProgState GHC.Types.IO ())
+  {- Unfolding: ((Mascarpone.defCodepage57,
+                  Mascarpone.defCodepage55
+                    `cast`
+                  (Trans
+                       (<Mascarpone.ProgState>_R
+                        ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                       (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                 <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))))) -}
+56a30d70224c02e2f2b4fa149af12668
+  defCodepage55 ::
+    Mascarpone.ProgState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Mascarpone.ProgState) #)
+  {- Arity: 2, Strictness: <S(LS),1*U(U,1*U)><S,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (s1 :: Mascarpone.ProgState)
+                   (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case s1 of wild { Mascarpone.State ds ds1 ->
+                 case ds1 of wild1 {
+                   []
+                   -> case Mascarpone.create3
+                      ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                ((), Mascarpone.ProgState) #)
+                      of {}
+                   : x3 xs
+                   -> case x3 of wild2 {
+                        DEFAULT
+                        -> case Mascarpone.defCodepage56
+                           ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                     ((), Mascarpone.ProgState) #)
+                           of {}
+                        Mascarpone.Op e
+                        -> (e `cast`
+                            (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                 <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N)
+                              (Mascarpone.State ds xs))
+                             `cast`
+                           (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R)
+                             s } } }) -}
+ccc510af978474d1e9927dff5124d8b6
+  defCodepage56 ::
+    Control.Monad.Trans.State.Lazy.StateT
+      Mascarpone.ProgState GHC.Types.IO ()
+  {- Strictness: x -}
+a6bf5bb0d34729a43f7a458e0ac397dd
+  defCodepage57 :: Mascarpone.Symbol
+  {- HasNoCafRefs,
+     Unfolding: (Mascarpone.Chr Mascarpone.defCodepage58) -}
+d1d6bf8c28e6b8c8cbc0367ba74820a3
+  defCodepage58 :: GHC.Types.Char
+  {- HasNoCafRefs, Unfolding: (GHC.Types.C# '!'#) -}
+3791e703409c76b5a9e328c823bea806
+  defCodepage59 ::
+    (Mascarpone.Symbol,
+     Control.Monad.Trans.State.Lazy.StateT
+       Mascarpone.ProgState GHC.Types.IO ())
+  {- Unfolding: ((Mascarpone.defCodepage60,
+                  Mascarpone.expand
+                    @ (Control.Monad.Trans.State.Lazy.StateT
+                         Mascarpone.ProgState GHC.Types.IO ()))) -}
+c90ad7de88f0a90fdd921e62cd9ed758
+  defCodepage6 ::
+    [(Mascarpone.Symbol,
+      Control.Monad.Trans.State.Lazy.StateT
+        Mascarpone.ProgState GHC.Types.IO ())]
+  {- Unfolding: (GHC.Types.:
+                   @ (Mascarpone.Symbol,
+                      Control.Monad.Trans.State.Lazy.StateT
+                        Mascarpone.ProgState GHC.Types.IO ())
+                   Mascarpone.defCodepage65
+                   Mascarpone.defCodepage7) -}
+412114b93f08032e5ded154b526595fc
+  defCodepage60 :: Mascarpone.Symbol
+  {- HasNoCafRefs,
+     Unfolding: (Mascarpone.Chr Mascarpone.defCodepage61) -}
+1ab40367e6e41e0dd93eb6a482a8d965
+  defCodepage61 :: GHC.Types.Char
+  {- HasNoCafRefs, Unfolding: (GHC.Types.C# '@'#) -}
+067b9508fbd63991dad8b0e9376dd206
+  defCodepage62 ::
+    (Mascarpone.Symbol,
+     Control.Monad.Trans.State.Lazy.StateT
+       Mascarpone.ProgState GHC.Types.IO ())
+  {- Unfolding: ((Mascarpone.defCodepage63,
+                  Mascarpone.create1
+                    `cast`
+                  (Trans
+                       (<Mascarpone.ProgState>_R
+                        ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                       (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                 <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))))) -}
+87d84f0a115b8732be1826deab7ff891
+  defCodepage63 :: Mascarpone.Symbol
+  {- HasNoCafRefs,
+     Unfolding: (Mascarpone.Chr Mascarpone.defCodepage64) -}
+0a41e60111ecba14a0b912a26ccb731b
+  defCodepage64 :: GHC.Types.Char
+  {- HasNoCafRefs, Unfolding: (GHC.Types.C# '*'#) -}
+0dabf57a4e3e7098358f11064505642d
+  defCodepage65 ::
+    (Mascarpone.Symbol,
+     Control.Monad.Trans.State.Lazy.StateT
+       Mascarpone.ProgState GHC.Types.IO ())
+  {- Unfolding: ((Mascarpone.defCodepage67,
+                  Mascarpone.defCodepage66
+                    `cast`
+                  (Trans
+                       (<Mascarpone.ProgState>_R
+                        ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                       (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                 <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))))) -}
+af1aee27cd6e35df42a2ae0bd140ad81
+  defCodepage66 ::
+    Mascarpone.ProgState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Mascarpone.ProgState) #)
+  {- Arity: 2, Strictness: <S(LS),1*U(U,1*U)><S,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Mascarpone.ProgState)
+                   (w1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case w of ww { Mascarpone.State ww1 ww2 ->
+                 Mascarpone.$wsetParent ww1 ww2 w1 }) -}
+c6a1a8a786f33aa226d238740c6e95f5
+  defCodepage67 :: Mascarpone.Symbol
+  {- HasNoCafRefs,
+     Unfolding: (Mascarpone.Chr Mascarpone.defCodepage68) -}
+0f6fdd936907771050eb7fac63a735be
+  defCodepage68 :: GHC.Types.Char
+  {- HasNoCafRefs, Unfolding: (GHC.Types.C# '}'#) -}
+732a1778ff1b396ce55a5b4a48b24dd8
+  defCodepage69 ::
+    (Mascarpone.Symbol,
+     Control.Monad.Trans.State.Lazy.StateT
+       Mascarpone.ProgState GHC.Types.IO ())
+  {- Unfolding: ((Mascarpone.defCodepage71,
+                  Mascarpone.defCodepage70
+                    `cast`
+                  (Trans
+                       (<Mascarpone.ProgState>_R
+                        ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                       (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                 <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))))) -}
+2d7554ee77b51299609819d5edb36bde
+  defCodepage7 ::
+    [(Mascarpone.Symbol,
+      Control.Monad.Trans.State.Lazy.StateT
+        Mascarpone.ProgState GHC.Types.IO ())]
+  {- Unfolding: (GHC.Types.:
+                   @ (Mascarpone.Symbol,
+                      Control.Monad.Trans.State.Lazy.StateT
+                        Mascarpone.ProgState GHC.Types.IO ())
+                   Mascarpone.defCodepage62
+                   Mascarpone.defCodepage8) -}
+9502cdd608a62b23b97d5255f3cff5f9
+  defCodepage70 ::
+    Mascarpone.ProgState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Mascarpone.ProgState) #)
+  {- Arity: 2, Strictness: <S(LS),1*U(U,1*U)><S,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Mascarpone.ProgState)
+                   (w1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case w of ww { Mascarpone.State ww1 ww2 ->
+                 Mascarpone.$wgetParent ww1 ww2 w1 }) -}
+8f81e1b13ecb7b951dab384988d6a0f6
+  defCodepage71 :: Mascarpone.Symbol
+  {- HasNoCafRefs,
+     Unfolding: (Mascarpone.Chr Mascarpone.defCodepage72) -}
+3975edebf009196734fe583f2f029471
+  defCodepage72 :: GHC.Types.Char
+  {- HasNoCafRefs, Unfolding: (GHC.Types.C# '{'#) -}
+99f4bd888fbcf909de240687ac3b2719
+  defCodepage73 ::
+    (Mascarpone.Symbol,
+     Control.Monad.Trans.State.Lazy.StateT
+       Mascarpone.ProgState GHC.Types.IO ())
+  {- Unfolding: ((Mascarpone.defCodepage75,
+                  Mascarpone.defCodepage74
+                    `cast`
+                  (Trans
+                       (<Mascarpone.ProgState>_R
+                        ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                       (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                 <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))))) -}
+0eed97f31d7f3c6d14a6b377de3aefc6
+  defCodepage74 ::
+    Mascarpone.ProgState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Mascarpone.ProgState) #)
+  {- Arity: 2, Strictness: <S(LS),1*U(U,1*U)><S,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Mascarpone.ProgState)
+                   (w1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case w of ww { Mascarpone.State ww1 ww2 ->
+                 Mascarpone.$winstall ww1 ww2 w1 }) -}
+7185342954db226deacdc9750c1a42a2
+  defCodepage75 :: Mascarpone.Symbol
+  {- HasNoCafRefs,
+     Unfolding: (Mascarpone.Chr Mascarpone.defCodepage76) -}
+b383de7b762ee2e5f8242e8eff8c4a2a
+  defCodepage76 :: GHC.Types.Char
+  {- HasNoCafRefs, Unfolding: (GHC.Types.C# '<'#) -}
+a07acaf0540b7fb33279879ddf7a4fc1
+  defCodepage77 ::
+    (Mascarpone.Symbol,
+     Control.Monad.Trans.State.Lazy.StateT
+       Mascarpone.ProgState GHC.Types.IO ())
+  {- Unfolding: ((Mascarpone.defCodepage79,
+                  Mascarpone.defCodepage78
+                    `cast`
+                  (Trans
+                       (<Mascarpone.ProgState>_R
+                        ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                       (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                 <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))))) -}
+a815e763f1cf60b8394ad85afba29218
+  defCodepage78 ::
+    Mascarpone.ProgState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Mascarpone.ProgState) #)
+  {- Arity: 2, Strictness: <S(LS),1*U(U,1*U)><S,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Mascarpone.ProgState)
+                   (w1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case w of ww { Mascarpone.State ww1 ww2 ->
+                 Mascarpone.$wextract ww1 ww2 w1 }) -}
+836485e4eccb7693f50746670230ab66
+  defCodepage79 :: Mascarpone.Symbol
+  {- HasNoCafRefs,
+     Unfolding: (Mascarpone.Chr Mascarpone.defCodepage80) -}
+f6d6fd9742689b7d881543e8511e71ff
+  defCodepage8 ::
+    [(Mascarpone.Symbol,
+      Control.Monad.Trans.State.Lazy.StateT
+        Mascarpone.ProgState GHC.Types.IO ())]
+  {- Unfolding: (GHC.Types.:
+                   @ (Mascarpone.Symbol,
+                      Control.Monad.Trans.State.Lazy.StateT
+                        Mascarpone.ProgState GHC.Types.IO ())
+                   Mascarpone.defCodepage59
+                   Mascarpone.defCodepage9) -}
+005762e549d4060ac5e524321f2b0a3e
+  defCodepage80 :: GHC.Types.Char
+  {- HasNoCafRefs, Unfolding: (GHC.Types.C# '>'#) -}
+1a749b2c87f7445abcf906ae9d99ad7c
+  defCodepage81 ::
+    (Mascarpone.Symbol,
+     Control.Monad.Trans.State.Lazy.StateT
+       Mascarpone.ProgState GHC.Types.IO ())
+  {- Unfolding: ((Mascarpone.defCodepage84,
+                  Mascarpone.defCodepage82
+                    `cast`
+                  (Trans
+                       (<Mascarpone.ProgState>_R
+                        ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                       (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                 <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))))) -}
+2ddc8bb7a49787a03da71ad86371afd0
+  defCodepage82 ::
+    Mascarpone.ProgState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Mascarpone.ProgState) #)
+  {- Arity: 2, Strictness: <S(LS),1*U(A,1*U)><S,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (s1 :: Mascarpone.ProgState)
+                   (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case s1 of wild { Mascarpone.State ds ds1 ->
+                 case ds1 of wild1 {
+                   []
+                   -> case Mascarpone.create3
+                      ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                ((), Mascarpone.ProgState) #)
+                      of {}
+                   : x3 xs
+                   -> case x3 of wild2 {
+                        DEFAULT
+                        -> case Mascarpone.defCodepage83
+                           ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                     ((), Mascarpone.ProgState) #)
+                           of {}
+                        Mascarpone.Intr i
+                        -> (# s, (GHC.Tuple.(), Mascarpone.State i xs) #) } } }) -}
+9da9d23b1d9a72b92231e43a3061128e
+  defCodepage83 ::
+    Control.Monad.Trans.State.Lazy.StateT
+      Mascarpone.ProgState GHC.Types.IO ()
+  {- Strictness: x -}
+af9a9f9a21821ac4ceb0256aa1ea20a5
+  defCodepage84 :: Mascarpone.Symbol
+  {- HasNoCafRefs,
+     Unfolding: (Mascarpone.Chr Mascarpone.defCodepage85) -}
+62de1a10b8a1cff90a92d22611cce152
+  defCodepage85 :: GHC.Types.Char
+  {- HasNoCafRefs, Unfolding: (GHC.Types.C# '^'#) -}
+61c5177116b51946dfc37144c7209382
+  defCodepage86 ::
+    (Mascarpone.Symbol,
+     Control.Monad.Trans.State.Lazy.StateT
+       Mascarpone.ProgState GHC.Types.IO ())
+  {- HasNoCafRefs,
+     Unfolding: ((Mascarpone.defCodepage88,
+                  Mascarpone.defCodepage87
+                    `cast`
+                  (Trans
+                       (<Mascarpone.ProgState>_R
+                        ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                       (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                 <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))))) -}
+62e417f4b6f0ea1767220376d590e2ce
+  defCodepage87 ::
+    Mascarpone.ProgState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Mascarpone.ProgState) #)
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,1*U(U,U)><S,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (s1 :: Mascarpone.ProgState)
+                   (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 (# s,
+                    (GHC.Tuple.(),
+                     case s1 of wild { Mascarpone.State ds ds1 ->
+                     Mascarpone.State
+                       ds
+                       (GHC.Types.:
+                          @ Mascarpone.StackElem
+                          (Mascarpone.Intr ds)
+                          ds1) }) #)) -}
+11381d0436c601a8eb389ef76fc4af8d
+  defCodepage88 :: Mascarpone.Symbol
+  {- HasNoCafRefs,
+     Unfolding: (Mascarpone.Chr Mascarpone.defCodepage89) -}
+0bda3c06e72a72a974fae057afa5d0a4
+  defCodepage89 :: GHC.Types.Char
+  {- HasNoCafRefs, Unfolding: (GHC.Types.C# 'v'#) -}
+a09f943e8d7e92efc586e0e73f66f09f
+  defCodepage9 ::
+    [(Mascarpone.Symbol,
+      Control.Monad.Trans.State.Lazy.StateT
+        Mascarpone.ProgState GHC.Types.IO ())]
+  {- Unfolding: (GHC.Types.:
+                   @ (Mascarpone.Symbol,
+                      Control.Monad.Trans.State.Lazy.StateT
+                        Mascarpone.ProgState GHC.Types.IO ())
+                   Mascarpone.defCodepage54
+                   Mascarpone.defCodepage10) -}
+19d3f5e8fab827d490849b4fac57c2b0
+  defCodepage_str :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Pattern match failure in do expression at app/Mascarpone.hs:177:3-8"#) -}
+79f0cc8ec85df8d5e576f1b1b2c9e7bc
+  defCodepage_str1 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Pattern match failure in do expression at app/Mascarpone.hs:155:3-6"#) -}
+5f6b80aceb62646ae6ea2e63fc992a2d
+  defCodepage_str2 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Pattern match failure in do expression at app/Mascarpone.hs:136:3-8"#) -}
+058c63f4c7dfee828794ff38f700bac8
+  defCodepage_x :: Mascarpone.StackElem
+  {- Strictness: m3,
+     Unfolding: (Mascarpone.Intr Mascarpone.nullInterpreter) -}
+29674f998dcc9d47a3e9e2e6903078cd
   defaultInterpreter :: Mascarpone.Interpreter
-10a096470c089ef16afb7c4adaf5fc40
+  {- Strictness: m,
+     Unfolding: (Mascarpone.Interpreter
+                   Mascarpone.defCodepage
+                   Mascarpone.nullInterpreter
+                   Mascarpone.defaultInterpreter1
+                     `cast`
+                   (<Mascarpone.Symbol>_R
+                    ->_R Trans
+                             (<Mascarpone.ProgState>_R
+                              ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                             (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                       <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N)))) -}
+795603a18e302c32be2c67cb4a4a6b06
+  defaultInterpreter1 ::
+    Mascarpone.Symbol
+    -> Mascarpone.ProgState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Mascarpone.ProgState) #)
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,A><L,U><S,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ (ds :: Mascarpone.Symbol)
+                   (eta :: Mascarpone.ProgState)
+                   (eta1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 (# eta1, (GHC.Tuple.(), eta) #)) -}
+acab718a92d96c1340afa7664247f17b
   deify ::
     Control.Monad.Trans.State.Lazy.StateT
       Mascarpone.ProgState GHC.Types.IO ()
-69d712591d30768be33b8a150ad8baed
+  {- Arity: 2, Strictness: <S(LS),1*U(A,1*U)><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Mascarpone.defCodepage82
+                  `cast`
+                (Trans
+                     (<Mascarpone.ProgState>_R
+                      ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                     (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                               <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))) -}
+a431319780bab1a7d37bba9d5d48e95e
   dup ::
     Control.Monad.Trans.State.Lazy.StateT
       Mascarpone.ProgState GHC.Types.IO ()
-1e1b4a43477fd2f0ba3ba2e834bc71af
+  {- Arity: 2, HasNoCafRefs, Strictness: <S(LS),1*U(U,U)><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Mascarpone.defCodepage28
+                  `cast`
+                (Trans
+                     (<Mascarpone.ProgState>_R
+                      ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                     (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                               <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))) -}
+e098dc3dfa787092ebce2fd2774dc07f
   expand :: a
-af114b85c5979a40eac3b521ba4aff3f
+  {- Strictness: x -}
+a1a0adfa2ff98512c6f80247033fcd83
   extract ::
     Control.Monad.Trans.State.Lazy.StateT
       Mascarpone.ProgState GHC.Types.IO ()
-e8f63aa73e1fbbf0bfb90c09855bf2ec
+  {- Arity: 2, Strictness: <S(LS),1*U(U,1*U)><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Mascarpone.defCodepage78
+                  `cast`
+                (Trans
+                     (<Mascarpone.ProgState>_R
+                      ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                     (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                               <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))) -}
+a7ce28b360f64071fb7a6a1ac7b67b05
   fallback ::
     Mascarpone.Interpreter -> Mascarpone.Symbol -> Mascarpone.Effect
   RecSel Left Mascarpone.Interpreter
-e5235ea5c9ebad7e430f6952d9857964
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LLS),1*U(A,A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Mascarpone.Interpreter) ->
+                 case ds of wild { Mascarpone.Interpreter ds1 ds2 ds3 -> ds3 }) -}
+a00341706d55808e90afc238533dacf2
   getParent ::
     Control.Monad.Trans.State.Lazy.StateT
       Mascarpone.ProgState GHC.Types.IO ()
-af505df76d49038975a600e1382aef0e
+  {- Arity: 2, Strictness: <S(LS),1*U(U,1*U)><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Mascarpone.defCodepage70
+                  `cast`
+                (Trans
+                     (<Mascarpone.ProgState>_R
+                      ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                     (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                               <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))) -}
+cfa12d5f384e9bc505337b82ef4b0737
   initialState :: Mascarpone.ProgState
-2afa6391cc7d7d6d16f3fb6680ce0f7b
+  {- Strictness: m,
+     Unfolding: (Mascarpone.State
+                   Mascarpone.defaultInterpreter
+                   (GHC.Types.[] @ Mascarpone.StackElem)) -}
+c91dab086872d504e2d36e715122a292
   install ::
     Control.Monad.Trans.State.Lazy.StateT
       Mascarpone.ProgState GHC.Types.IO ()
-9073e422e6d361d516012e0766c4eb8a
+  {- Arity: 2, Strictness: <S(LS),1*U(U,1*U)><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Mascarpone.defCodepage74
+                  `cast`
+                (Trans
+                     (<Mascarpone.ProgState>_R
+                      ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                     (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                               <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))) -}
+acc2e2afef756726fb132cb8e1ac35d4
   interpret :: GHC.Base.String -> Mascarpone.Effect
-d84f3bf7336c9ad66012cc8b0aee84f5
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S,1*U><L,U(U(U,U,U),U)><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Mascarpone.interpret1
+                  `cast`
+                (<GHC.Base.String>_R
+                 ->_R Trans
+                          (<Mascarpone.ProgState>_R
+                           ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                          (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                    <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))) -}
+6dce77bb38f97c526b096c045f011da8
+  interpret1 ::
+    GHC.Base.String
+    -> Mascarpone.ProgState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Mascarpone.ProgState) #)
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S,1*U><L,U(U(U,U,U),U)><S,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ (code :: GHC.Base.String)
+                   (s1 :: Mascarpone.ProgState)
+                   (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 Mascarpone.interpret2
+                   (case s1 of wild { Mascarpone.State ds ds1 -> ds })
+                   code
+                   s1
+                   s) -}
+8426ae68f1dad2a300b6b8eb4ba35877
+  interpret2 ::
+    Mascarpone.Interpreter
+    -> GHC.Base.String
+    -> Mascarpone.ProgState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Mascarpone.ProgState) #)
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <L,A><S,1*U><L,U(U(U,U,U),U)><S,U>, Inline: INLINE[0],
+     Unfolding: InlineRule (4, True, True)
+                (\ (w :: Mascarpone.Interpreter)
+                   (w1 :: GHC.Base.String)
+                   (w2 :: Mascarpone.ProgState)
+                   (w3 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 Mascarpone.create2 w1 w2 w3) -}
+abe80f41c94409b124fc0abce2fc0af2
   interpretWith ::
     Mascarpone.Interpreter -> GHC.Base.String -> Mascarpone.Effect
-5835daeb9d1e42916d4a268f45616377
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <L,A><S,1*U><L,U(U(U,U,U),U)><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Mascarpone.interpret2
+                  `cast`
+                (<Mascarpone.Interpreter>_R
+                 ->_R <GHC.Base.String>_R
+                 ->_R Trans
+                          (<Mascarpone.ProgState>_R
+                           ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                          (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                    <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))) -}
+34e44a641a1faf9f93848280dc8859d0
   interpreter :: Mascarpone.ProgState -> Mascarpone.Interpreter
   RecSel Left Mascarpone.ProgState
-89a6232fd8e88697767b0407c2430420
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SL),1*U(1*U(U,U,U),A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Mascarpone.ProgState) ->
+                 case ds of wild { Mascarpone.State ds1 ds2 -> ds1 }) -}
+68fd7b798885c156d5a9e827050b120a
   nop ::
     Control.Monad.Trans.State.Lazy.StateT
       Mascarpone.ProgState GHC.Types.IO ()
-5870748257b8ed778ca8e6bb403e6268
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Mascarpone.nop1
+                  `cast`
+                (Trans
+                     (<Mascarpone.ProgState>_R
+                      ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                     (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                               <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))) -}
+d298dc5466cecb791a52e81196997265
+  nop1 ::
+    Mascarpone.ProgState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Mascarpone.ProgState) #)
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (eta1 :: Mascarpone.ProgState)
+                   (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 (# s, (GHC.Tuple.(), eta1) #)) -}
+e0108baf15c5de4c4d251056d6e0415f
   nullInterpreter :: Mascarpone.Interpreter
-ac58e7f35ffe73536f7207f9886b8b0d
+  {- Strictness: m -}
+2e7d0caa5f9e00f2c1d351283a3b5f9c
   nulli :: Mascarpone.Effect
-47e525dbf5da6d7d581fc37c5e1208e9
+  {- Arity: 2, Strictness: <L,1*U(U,U)><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Mascarpone.defCodepage51
+                  `cast`
+                (Trans
+                     (<Mascarpone.ProgState>_R
+                      ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                     (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                               <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))) -}
+cf01f03cd47b87cbd660f85f7b2037b4
   outp ::
     Control.Monad.Trans.State.Lazy.StateT
       Mascarpone.ProgState GHC.Types.IO ()
-73fe8e343fe216e0114ffd9302794f5e
+  {- Arity: 2, Strictness: <S(LS),1*U(U,1*U)><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Mascarpone.defCodepage36
+                  `cast`
+                (Trans
+                     (<Mascarpone.ProgState>_R
+                      ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                     (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                               <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))) -}
+29aca751cf09c7f3b3edf1068fe4ca17
   parent :: Mascarpone.Interpreter -> Mascarpone.Interpreter
   RecSel Left Mascarpone.Interpreter
-2d0a0ff720cd675d684ec763d27f90a6
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LSL),1*U(A,1*U(U,U,U),A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Mascarpone.Interpreter) ->
+                 case ds of wild { Mascarpone.Interpreter ds1 ds2 ds3 -> ds2 }) -}
+60e320584869dcb4933d8d1a1f2a95ec
   peek ::
     Control.Monad.Trans.State.Lazy.StateT
       Mascarpone.ProgState GHC.Types.IO Mascarpone.StackElem
-db41e257529959a3e65b0f0be98d9034
+  {- Arity: 2, Strictness: <S(LS),1*U(U,1*U)><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Mascarpone.peek1
+                  `cast`
+                (Trans
+                     (<Mascarpone.ProgState>_R
+                      ->_R Sym (GHC.Types.N:IO[0]
+                                    <(Mascarpone.StackElem, Mascarpone.ProgState)>_R))
+                     (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                               <Mascarpone.ProgState>_N
+                               <GHC.Types.IO>_R
+                               <Mascarpone.StackElem>_N))) -}
+435aac9c974b1b93f3c3a7b30b97e114
+  peek1 ::
+    Mascarpone.ProgState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          (Mascarpone.StackElem, Mascarpone.ProgState) #)
+  {- Arity: 2, Strictness: <S(LS),1*U(U,1*U)><S,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (s1 :: Mascarpone.ProgState)
+                   (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case s1 of wild { Mascarpone.State ds ds1 ->
+                 case ds1 of wild1 {
+                   []
+                   -> case Mascarpone.create3
+                      ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                (Mascarpone.StackElem, Mascarpone.ProgState) #)
+                      of {}
+                   : x3 xs
+                   -> (# s,
+                         (x3,
+                          Mascarpone.State
+                            ds
+                            (GHC.Types.: @ Mascarpone.StackElem x3 xs)) #) } }) -}
+b2ab6f5cd1c0c8a9871b9265fe71deda
   perform ::
     Control.Monad.Trans.State.Lazy.StateT
       Mascarpone.ProgState GHC.Types.IO ()
-5b94b0cbf0074286d12ee475d4d9e402
+  {- Arity: 2, Strictness: <S(LS),1*U(U,1*U)><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Mascarpone.defCodepage55
+                  `cast`
+                (Trans
+                     (<Mascarpone.ProgState>_R
+                      ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                     (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                               <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))) -}
+7ce89f93fc8d9027738743e1a4faa691
   pop ::
     Control.Monad.Trans.State.Lazy.StateT
       Mascarpone.ProgState GHC.Types.IO Mascarpone.StackElem
-cc6fb9030464b2d5f769b29f0ad294a2
+  {- Arity: 2, Strictness: <S(LS),1*U(U,1*U)><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Mascarpone.pop1
+                  `cast`
+                (Trans
+                     (<Mascarpone.ProgState>_R
+                      ->_R Sym (GHC.Types.N:IO[0]
+                                    <(Mascarpone.StackElem, Mascarpone.ProgState)>_R))
+                     (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                               <Mascarpone.ProgState>_N
+                               <GHC.Types.IO>_R
+                               <Mascarpone.StackElem>_N))) -}
+512bf8bf82abba98d8fa84e7f3145ee6
   pop' ::
     Control.Monad.Trans.State.Lazy.StateT
       Mascarpone.ProgState GHC.Types.IO ()
-ae54b28fa7a6e8da02df099c7d0e953f
+  {- Arity: 2, Strictness: <S(LS),1*U(U,1*U)><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Mascarpone.defCodepage24
+                  `cast`
+                (Trans
+                     (<Mascarpone.ProgState>_R
+                      ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                     (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                               <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))) -}
+d28af95adcd591e5ac4d7f9e7286cdf3
+  pop1 ::
+    Mascarpone.ProgState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          (Mascarpone.StackElem, Mascarpone.ProgState) #)
+  {- Arity: 2, Strictness: <S(LS),1*U(U,1*U)><S,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (s1 :: Mascarpone.ProgState)
+                   (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case s1 of wild { Mascarpone.State ds ds1 ->
+                 case ds1 of wild1 {
+                   []
+                   -> case Mascarpone.create3
+                      ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                (Mascarpone.StackElem, Mascarpone.ProgState) #)
+                      of {}
+                   : x3 xs -> (# s, (x3, Mascarpone.State ds xs) #) } }) -}
+18b2afc2a7330df00093046ff003a10c
   pop2 ::
     Control.Monad.Trans.State.Lazy.StateT
       Mascarpone.ProgState
       GHC.Types.IO
       (Mascarpone.StackElem, Mascarpone.StackElem)
-b369fb0b4c498bf580f9ccc999c0a80b
+  {- Arity: 2, Strictness: <S(LS),1*U(U,1*U)><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Mascarpone.pop5
+                  `cast`
+                (Trans
+                     (<Mascarpone.ProgState>_R
+                      ->_R Sym (GHC.Types.N:IO[0]
+                                    <((Mascarpone.StackElem, Mascarpone.StackElem),
+                                      Mascarpone.ProgState)>_R))
+                     (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                               <Mascarpone.ProgState>_N
+                               <GHC.Types.IO>_R
+                               <(Mascarpone.StackElem, Mascarpone.StackElem)>_N))) -}
+9ea13241f213ca858c08da77a8865863
   pop3 ::
     Control.Monad.Trans.State.Lazy.StateT
       Mascarpone.ProgState
       GHC.Types.IO
       (Mascarpone.StackElem, Mascarpone.StackElem, Mascarpone.StackElem)
-96547ff566c71d20aaf5365486eb1a2a
+  {- Arity: 2, Strictness: <S(LS),1*U(U,1*U)><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Mascarpone.pop6
+                  `cast`
+                (Trans
+                     (<Mascarpone.ProgState>_R
+                      ->_R Sym (GHC.Types.N:IO[0]
+                                    <((Mascarpone.StackElem, Mascarpone.StackElem,
+                                       Mascarpone.StackElem),
+                                      Mascarpone.ProgState)>_R))
+                     (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                               <Mascarpone.ProgState>_N
+                               <GHC.Types.IO>_R
+                               <(Mascarpone.StackElem, Mascarpone.StackElem,
+                                 Mascarpone.StackElem)>_N))) -}
+a0dede35f021828b70f491723996f2af
   pop4 ::
     Control.Monad.Trans.State.Lazy.StateT
       Mascarpone.ProgState
       GHC.Types.IO
       (Mascarpone.StackElem, Mascarpone.StackElem, Mascarpone.StackElem,
        Mascarpone.StackElem)
-238ec2d13b455e16135f54b32356d5fe
+  {- Arity: 2, Strictness: <S(LS),1*U(U,1*U)><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Mascarpone.pop7
+                  `cast`
+                (Trans
+                     (<Mascarpone.ProgState>_R
+                      ->_R Sym (GHC.Types.N:IO[0]
+                                    <((Mascarpone.StackElem, Mascarpone.StackElem,
+                                       Mascarpone.StackElem, Mascarpone.StackElem),
+                                      Mascarpone.ProgState)>_R))
+                     (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                               <Mascarpone.ProgState>_N
+                               <GHC.Types.IO>_R
+                               <(Mascarpone.StackElem, Mascarpone.StackElem, Mascarpone.StackElem,
+                                 Mascarpone.StackElem)>_N))) -}
+83a91857aa2fdd3a6022069fbfeda5ff
+  pop5 ::
+    Mascarpone.ProgState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((Mascarpone.StackElem, Mascarpone.StackElem),
+           Mascarpone.ProgState) #)
+  {- Arity: 2, Strictness: <S(LS),1*U(U,1*U)><S,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (s1 :: Mascarpone.ProgState)
+                   (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case s1 of wild { Mascarpone.State ds ds1 ->
+                 case ds1 of wild1 {
+                   []
+                   -> case Mascarpone.create3
+                      ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                ((Mascarpone.StackElem, Mascarpone.StackElem),
+                                 Mascarpone.ProgState) #)
+                      of {}
+                   : x3 xs
+                   -> case xs of wild2 {
+                        []
+                        -> case Mascarpone.create3
+                           ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                     ((Mascarpone.StackElem, Mascarpone.StackElem),
+                                      Mascarpone.ProgState) #)
+                           of {}
+                        : x4 xs1 -> (# s, ((x3, x4), Mascarpone.State ds xs1) #) } } }) -}
+7671aa09c844adca48ae9b381a7180cd
+  pop6 ::
+    Mascarpone.ProgState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((Mascarpone.StackElem, Mascarpone.StackElem,
+            Mascarpone.StackElem),
+           Mascarpone.ProgState) #)
+  {- Arity: 2, Strictness: <S(LS),1*U(U,1*U)><S,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Mascarpone.ProgState)
+                   (w1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case w of ww { Mascarpone.State ww1 ww2 ->
+                 Mascarpone.$wpop3 ww1 ww2 w1 }) -}
+a366b619a0bab3f86c88ed4dd51cada6
+  pop7 ::
+    Mascarpone.ProgState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((Mascarpone.StackElem, Mascarpone.StackElem, Mascarpone.StackElem,
+            Mascarpone.StackElem),
+           Mascarpone.ProgState) #)
+  {- Arity: 2, Strictness: <S(LS),1*U(U,1*U)><S,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Mascarpone.ProgState)
+                   (w1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case w of ww { Mascarpone.State ww1 ww2 ->
+                 Mascarpone.$wpop4 ww1 ww2 w1 }) -}
+ade597ae8d703b8b3bf85b6acd416b90
   popString ::
     Control.Monad.Trans.State.Lazy.StateT
       Mascarpone.ProgState GHC.Types.IO GHC.Base.String
-31ba28abdd106243705c225364c9d463
+  {- Arity: 2, Strictness: <S(LS),1*U(U,1*U)><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Mascarpone.popString1
+                  `cast`
+                (Trans
+                     (<Mascarpone.ProgState>_R
+                      ->_R Sym (GHC.Types.N:IO[0]
+                                    <(GHC.Base.String, Mascarpone.ProgState)>_R))
+                     (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                               <Mascarpone.ProgState>_N <GHC.Types.IO>_R <GHC.Base.String>_N))) -}
+8072f950f7a028f36ec1f2cc02503782
+  popString1 ::
+    Mascarpone.ProgState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          (GHC.Base.String, Mascarpone.ProgState) #)
+  {- Arity: 2, Strictness: <S(LS),1*U(U,1*U)><S,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Mascarpone.ProgState)
+                   (w1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case w of ww { Mascarpone.State ww1 ww2 ->
+                 Mascarpone.$wpopString ww1 ww2 w1 }) -}
+b08ba255272e87a51829970e221cf8fe
   push :: Mascarpone.StackElem -> Mascarpone.Effect
-1bb8a4c143a18b149e6a2eaa59e16781
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,U><L,1*U(U,U)><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Mascarpone.push1
+                  `cast`
+                (<Mascarpone.StackElem>_R
+                 ->_R Trans
+                          (<Mascarpone.ProgState>_R
+                           ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                          (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                    <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))) -}
+df7cdccc1869dd00fdd14d986adedc89
+  push1 ::
+    Mascarpone.StackElem
+    -> Mascarpone.ProgState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Mascarpone.ProgState) #)
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,U><L,1*U(U,U)><S,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ (x3 :: Mascarpone.StackElem)
+                   (eta1 :: Mascarpone.ProgState)
+                   (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 (# s,
+                    (GHC.Tuple.(),
+                     case eta1 of wild { Mascarpone.State ds ds1 ->
+                     Mascarpone.State
+                       ds
+                       (GHC.Types.: @ Mascarpone.StackElem x3 ds1) }) #)) -}
+9b807097e1f53850d9e1993aff8efc32
   quotesym ::
     Control.Monad.Trans.State.Lazy.StateT
       Mascarpone.ProgState GHC.Types.IO ()
-370949283f9f7104888226fba4c7a287
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U(U,U)><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Mascarpone.defCodepage40
+                  `cast`
+                (Trans
+                     (<Mascarpone.ProgState>_R
+                      ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                     (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                               <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))) -}
+43e34255d2b39a331260d1fe002a797d
   readInp ::
     Control.Monad.Trans.State.Lazy.StateT
       Mascarpone.ProgState GHC.Types.IO ()
-4bae6e17b269cb45e3c01bca696987c1
+  {- Arity: 2, Strictness: <L,1*U(U,U)><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Mascarpone.defCodepage32
+                  `cast`
+                (Trans
+                     (<Mascarpone.ProgState>_R
+                      ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                     (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                               <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))) -}
+9b2e67c464f9fc6b61df1ac0e7d3c065
   reify ::
     Control.Monad.Trans.State.Lazy.StateT
       Mascarpone.ProgState GHC.Types.IO ()
-d7d0103eaa8c782739b0b4814e07e255
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,1*U(U,U)><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Mascarpone.defCodepage87
+                  `cast`
+                (Trans
+                     (<Mascarpone.ProgState>_R
+                      ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                     (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                               <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))) -}
+81e1c9dfe59afe63d35a28252c9f7a92
   run :: GHC.Base.String -> GHC.Types.IO ()
-72c1dbe04dd0a84b74dd38111d5068f0
+  {- Arity: 2, Strictness: <S,1*U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Mascarpone.run1
+                  `cast`
+                (<GHC.Base.String>_R ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
+3d75b21bf11e1d4a5aded7eb3b3dab58
+  run1 ::
+    GHC.Base.String
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <S,1*U><S,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (code :: GHC.Base.String)
+                   (eta2 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case Mascarpone.interpret2
+                        Mascarpone.defaultInterpreter
+                        code
+                        Mascarpone.initialState
+                        eta2 of ds { (#,#) ipv ipv1 ->
+                 (# ipv, GHC.Tuple.() #) }) -}
+69da8a5f180f48b61e3f997afbef289c
   setParent ::
     Control.Monad.Trans.State.Lazy.StateT
       Mascarpone.ProgState GHC.Types.IO ()
-83e0568f2d418dd7b24f772c3403d9a6
+  {- Arity: 2, Strictness: <S(LS),1*U(U,1*U)><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Mascarpone.defCodepage66
+                  `cast`
+                (Trans
+                     (<Mascarpone.ProgState>_R
+                      ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                     (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                               <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))) -}
+c949b50e0f7bf565f00df7a6bc98e173
   stack :: Mascarpone.ProgState -> [Mascarpone.StackElem]
   RecSel Left Mascarpone.ProgState
-157bc8d1d88be80a4bb13fdf78ca5f24
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LS),1*U(A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Mascarpone.ProgState) ->
+                 case ds of wild { Mascarpone.State ds1 ds2 -> ds2 }) -}
+c313903b978d6f85465c43afe2da9fc2
   swap ::
     Control.Monad.Trans.State.Lazy.StateT
       Mascarpone.ProgState GHC.Types.IO ()
-9934b3bb31ce3106b20891b92272ff10
+  {- Arity: 2, HasNoCafRefs, Strictness: <S(LS),1*U(U,U)><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Mascarpone.defCodepage20
+                  `cast`
+                (Trans
+                     (<Mascarpone.ProgState>_R
+                      ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                     (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                               <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))) -}
+4fe925b4a62a752477053842f34e6b27
   uniform ::
     Control.Monad.Trans.State.Lazy.StateT
       Mascarpone.ProgState GHC.Types.IO ()
+  {- Arity: 2, Strictness: <S(LS),1*U(U,1*U)><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Mascarpone.defCodepage47
+                  `cast`
+                (Trans
+                     (<Mascarpone.ProgState>_R
+                      ->_R Sym (GHC.Types.N:IO[0] <((), Mascarpone.ProgState)>_R))
+                     (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                               <Mascarpone.ProgState>_N <GHC.Types.IO>_R <()>_N))) -}
 instance [safe] GHC.Classes.Eq [Mascarpone.Symbol]
   = Mascarpone.$fEqSymbol
+instance [safe] GHC.Base.Monoid [Mascarpone.Interpreter]
+  = Mascarpone.$fMonoidInterpreter
 instance [safe] GHC.Classes.Ord [Mascarpone.Symbol]
   = Mascarpone.$fOrdSymbol
+instance [safe] GHC.Show.Show [Mascarpone.Symbol]
+  = Mascarpone.$fShowSymbol
+"SPEC/Mascarpone fromList @ Symbol _" [ALWAYS] forall @ a
+                                                      ($dOrd :: GHC.Classes.Ord Mascarpone.Symbol)
+  Data.Map.Base.fromList @ Mascarpone.Symbol @ a $dOrd
+  = Mascarpone.$sfromList @ a
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:

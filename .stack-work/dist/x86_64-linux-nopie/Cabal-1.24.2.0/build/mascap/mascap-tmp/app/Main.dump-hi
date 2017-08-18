@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2017-08-01 09:45:06.239133311 UTC
+2017-08-18 19:33:03.436299007 UTC
 
 interface main@main:Main 8002
-  interface hash: 72cb09f2275cb7a4aeb9dfbc8da40418
-  ABI hash: a7b015ecc301d5f4737ca09903ed965f
-  export-list hash: 77ee274487e77d074166a5e8f52a8847
+  interface hash: cd214be63edf90f297c068c880a30291
+  ABI hash: 02eb6c436d9ad5e1119f13ec79d3e64c
+  export-list hash: b2740ba07e42639c3f36f0e0dfc7d3e5
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 6debd15d510aa7ab3d21f57df565b94d
   sig of: Nothing
@@ -18,14 +18,13 @@ exports:
   Main.startOptions
   Main.versionString
   Main.Options{Main.Options optCode optInput}
-module dependencies: Mascap Mascarpone
-package dependencies: array-0.5.1.1@array-0.5.1.1 base-4.9.1.0*
+module dependencies: Joy Mascap Mascarpone Prefix
+package dependencies: array-0.5.1.1@array-0.5.1.1 base-4.9.1.0
                       containers-0.5.7.1@containers-0.5.7.1
                       deepseq-1.4.2.0@deepseq-1.4.2.0 ghc-prim-0.5.0.0
                       integer-gmp-1.0.0.1 mtl-2.2.1@mtl-2.2.1-BLKBelFsPB3BoFeSWSOYj6
                       transformers-0.5.2.0@transformers-0.5.2.0
 orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
-         main@main:Mascap
          transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
 family instance modules: base-4.9.1.0:Control.Applicative
                          base-4.9.1.0:Data.Complex base-4.9.1.0:Data.Either
@@ -48,42 +47,476 @@ import  -/  base-4.9.1.0:System.Environment 08cb808e8e6a7821e6f8cfa76a977431
 import  -/  base-4.9.1.0:System.Exit 068ba078eb20417d7af66db8b8ab4db1
 import  -/  base-4.9.1.0:System.IO e4a64a8e3dce8616da54f0ee7104f7db
 import  -/  ghc-prim-0.5.0.0:GHC.Types 89f8de4f08018c9177c98d979eae0e45
-import  -/  Mascap 9d9e490faee774d8b685584359a4d12e
-  exports: b29ee695ccf1980f07216eacc9ce51f7
-  run 28c3a77fbba8eb50af029cdca056dd52
-002cc52b17d56ad8507bd811588ccc08
+import  -/  Mascap 24c3cbc334c2cb3e442a40ec35c2b7be
+  exports: b2f63be2eaaea7ef04fac03342a7f0d5
+  run b6504494b150df333f809a5c760a9a69
+22c08b7feb60ed7fee3edc9f60f0c6c9
   $tc'Options :: GHC.Types.TyCon
-7cf98a8871403f3f7cb7fe40cb39f751
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   12053337813027498352##
+                   16687430618492430967##
+                   Main.$trModule
+                   Main.$tc'Options1) -}
+9cae58cbe3df5dbea147a3ed7d6e2999
+  $tc'Options1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Options"#) -}
+abd603e4fa0fb36a62f46c64ba42a773
   $tcOptions :: GHC.Types.TyCon
-83f529351410271e83fed952c86159e1
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   12007406591012137468##
+                   10089152995905404403##
+                   Main.$trModule
+                   Main.$tcOptions1) -}
+c273aba89b8392f117363d7c88d26f3c
+  $tcOptions1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Options"#) -}
+d6831ef04cb9301b090dfae6f7bb7ec7
   $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Main.$trModule2 Main.$trModule1) -}
+847d9fc3b8e6f0b424199f36b4999bb2
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Main"#) -}
+24ef6042833e75ffd7aa98b83ecca98d
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "main"#) -}
+86ac9aea4fbcda1ab52521d0fe0dcd4f
+  $woptions ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Main.Options #)
+  {- Arity: 1, Strictness: <S,U>, Inline: [0] -}
 2e69ad6b3046585ab2127353a6a7b2b2
   data Options
     = Options {optCode :: GHC.Types.IO GHC.Base.String,
                optInput :: GHC.Base.String}
-0d166822e21f7182ece26123ea2cf341
+64a0ef9e08d8d2a6b1e8edbfa7cb098f
   main :: GHC.Types.IO ()
-539f38b8eb586c4a7a71d7ee8e09decb
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
+21053b8042824a0e3d771bf501cc4f65
+  main1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case System.Environment.getArgs1 s of ds1 { (#,#) ipv ipv1 ->
+                 case System.Console.GetOpt.$wgetOpt'
+                        @ (Main.Options -> GHC.Types.IO Main.Options)
+                        (System.Console.GetOpt.RequireOrder
+                           @ (Main.Options -> GHC.Types.IO Main.Options))
+                        Main.options
+                        ipv1 of ww { (#,,,#) ww1 ww2 ww3 ww4 ->
+                 case Main.main3
+                        ww1
+                        Main.main2 `cast` (Sym (GHC.Types.N:IO[0] <Main.Options>_R))
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 case ipv3 of wild { Main.Options ds ds3 ->
+                 case ds `cast` (GHC.Types.N:IO[0] <GHC.Base.String>_R)
+                        ipv2 of ds4 { (#,#) ipv4 ipv5 ->
+                 Mascap.run1 ipv5 ipv4 } } } } }) -}
+4a06ac64bee5d2cd42deda1db0177bc2
+  main2 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Main.Options #)
+  {- Arity: 1,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 (# s, Main.startOptions #)) -}
+2fc6b1e72817cf18a822ca8533ec215a
+  main3 ::
+    [Main.Options -> GHC.Types.IO Main.Options]
+    -> GHC.Types.IO Main.Options
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Main.Options #)
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S,1*U><C(S),1*C1(U(U,U))><S,U> -}
+945c1461bf6c7b6071391091d70bf129
+  main4 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (GHC.TopHandler.runMainIO1
+                   @ ()
+                   Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
+9848103a10339446d6f90f5dd9ff409e
   optCode :: Main.Options -> GHC.Types.IO GHC.Base.String
   RecSel Left Main.Options
-96fafc9b1648e816713fb29e01b41458
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SL),1*U(1*U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Main.Options) ->
+                 case ds of wild { Main.Options ds1 ds2 -> ds1 }) -}
+f71e642b6491326235c3fab78facfe30
   optInput :: Main.Options -> GHC.Base.String
   RecSel Left Main.Options
-b6aee4f43be16b38bb8b75e72b11cb3f
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LS),1*U(A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Main.Options) ->
+                 case ds of wild { Main.Options ds1 ds2 -> ds2 }) -}
+044e8549ace75d6f39b1c9f868751e9a
   options ::
     [System.Console.GetOpt.OptDescr
        (Main.Options -> GHC.Types.IO Main.Options)]
-0e6f267f70b84f49bf3d98b75aacb17d
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (System.Console.GetOpt.OptDescr
+                        (Main.Options -> GHC.Types.IO Main.Options))
+                   Main.options35
+                   Main.options1) -}
+5ed04831895ee5d4de9259afe737742d
+  options1 ::
+    [System.Console.GetOpt.OptDescr
+       (Main.Options -> GHC.Types.IO Main.Options)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (System.Console.GetOpt.OptDescr
+                        (Main.Options -> GHC.Types.IO Main.Options))
+                   Main.options27
+                   Main.options2) -}
+ed7bb0d599522939bb18f59085a951a8
+  options10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "help"#) -}
+90f7ab89ab17cd94abbffbeca7b19476
+  options11 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "h"#) -}
+f2db3950a80ecee4a09db95ba2e330fe
+  options12 ::
+    System.Console.GetOpt.OptDescr
+      (Main.Options -> GHC.Types.IO Main.Options)
+  {- Strictness: m,
+     Unfolding: (System.Console.GetOpt.Option
+                   @ (Main.Options -> GHC.Types.IO Main.Options)
+                   Main.options18
+                   Main.options16
+                   Main.options14
+                   Main.options13) -}
+90e62f578af6c4a5a90428484469c5a9
+  options13 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Print version"#) -}
+3b3ee8c81ee759e5b49211204a4b5267
+  options14 ::
+    System.Console.GetOpt.ArgDescr
+      (Main.Options -> GHC.Types.IO Main.Options)
+  {- Strictness: m1,
+     Unfolding: (System.Console.GetOpt.NoArg
+                   @ (Main.Options -> GHC.Types.IO Main.Options)
+                   Main.options15
+                     `cast`
+                   (<Main.Options>_R
+                    ->_R Sym (GHC.Types.N:IO[0] <Main.Options>_R))) -}
+e1fadab9df0e9c1986103fbb1c6cbf70
+  options15 ::
+    Main.Options
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Main.Options #)
+  {- Arity: 2, Strictness: <L,A><S,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: Main.Options)
+                   (eta :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stderr
+                        Main.versionString
+                        GHC.Types.True
+                        eta of ds1 { (#,#) ipv ipv1 ->
+                 System.Exit.exitSuccess1 @ Main.Options ipv }) -}
+a940dc412e4ab8e3fa5b9fa4b678daac
+  options16 :: [GHC.Base.String]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Main.options17
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+4402e2715a8d8615b85e98c51dc7e9ce
+  options17 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "version"#) -}
+2da18c72c9379d991d925e18042ae384
+  options18 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "V"#) -}
+264411a5f054f27d7a21864854d86010
+  options19 ::
+    System.Console.GetOpt.OptDescr
+      (Main.Options -> GHC.Types.IO Main.Options)
+  {- Strictness: m,
+     Unfolding: (System.Console.GetOpt.Option
+                   @ (Main.Options -> GHC.Types.IO Main.Options)
+                   Main.options26
+                   Main.options24
+                   Main.options21
+                   Main.options20) -}
+23af1147418d05b04a91e44c8128519f
+  options2 ::
+    [System.Console.GetOpt.OptDescr
+       (Main.Options -> GHC.Types.IO Main.Options)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (System.Console.GetOpt.OptDescr
+                        (Main.Options -> GHC.Types.IO Main.Options))
+                   Main.options19
+                   Main.options3) -}
+2c234e031b664561cdab5d9350ea0353
+  options20 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Program input"#) -}
+556513a4358bc53d6b981a96aa590f20
+  options21 ::
+    System.Console.GetOpt.ArgDescr
+      (Main.Options -> GHC.Types.IO Main.Options)
+  {- Strictness: m2,
+     Unfolding: (System.Console.GetOpt.ReqArg
+                   @ (Main.Options -> GHC.Types.IO Main.Options)
+                   Main.options23
+                     `cast`
+                   (<GHC.Base.String>_R
+                    ->_R <Main.Options>_R
+                    ->_R Sym (GHC.Types.N:IO[0] <Main.Options>_R))
+                   Main.options22) -}
+374c9b8ecf7bd976894195515932dca4
+  options22 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "STRING"#) -}
+808bb2effb8e5d869a0c37c8ac75d264
+  options23 ::
+    GHC.Base.String
+    -> Main.Options
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Main.Options #)
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,U><L,1*U(U,A)><S,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ (arg :: GHC.Base.String)
+                   (opt :: Main.Options)
+                   (eta :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 (# eta,
+                    case opt of wild { Main.Options ds ds1 ->
+                    Main.Options ds arg } #)) -}
+4235574f803e9e662d04f64879a8e08a
+  options24 :: [GHC.Base.String]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Main.options25
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+4a04bbd1e249ba5be38a65abb48a80b1
+  options25 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "input"#) -}
+dcd0f91e3fd9fc9dcae040ad4b702f7a
+  options26 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "i"#) -}
+7b338c992f7949b48d659d92244ac5db
+  options27 ::
+    System.Console.GetOpt.OptDescr
+      (Main.Options -> GHC.Types.IO Main.Options)
+  {- Strictness: m,
+     Unfolding: (System.Console.GetOpt.Option
+                   @ (Main.Options -> GHC.Types.IO Main.Options)
+                   Main.options34
+                   Main.options32
+                   Main.options29
+                   Main.options28) -}
+50ed8a2757884ffae819ffffd46ecd27
+  options28 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Program code"#) -}
+6ccf2057c5a506a5ee780400fd569123
+  options29 ::
+    System.Console.GetOpt.ArgDescr
+      (Main.Options -> GHC.Types.IO Main.Options)
+  {- Strictness: m2,
+     Unfolding: (System.Console.GetOpt.ReqArg
+                   @ (Main.Options -> GHC.Types.IO Main.Options)
+                   Main.options31
+                     `cast`
+                   (<GHC.Base.String>_R
+                    ->_R <Main.Options>_R
+                    ->_R Sym (GHC.Types.N:IO[0] <Main.Options>_R))
+                   Main.options30) -}
+be0cb3f8311c2efbf1b37672f896532c
+  options3 ::
+    [System.Console.GetOpt.OptDescr
+       (Main.Options -> GHC.Types.IO Main.Options)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (System.Console.GetOpt.OptDescr
+                        (Main.Options -> GHC.Types.IO Main.Options))
+                   Main.options12
+                   Main.options4) -}
+9cfefcdaf962f03e2adc311afa5e4474
+  options30 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "CODE"#) -}
+5cb56f630fc27c5e3ebe44354cde59d3
+  options31 ::
+    GHC.Base.String
+    -> Main.Options
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Main.Options #)
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,U><L,1*U(A,U)><S,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ (arg :: GHC.Base.String)
+                   (opt :: Main.Options)
+                   (eta :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 (# eta,
+                    case opt of wild { Main.Options ds ds1 ->
+                    Main.Options
+                      (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                       (# s, arg #))
+                        `cast`
+                      (Sym (GHC.Types.N:IO[0] <GHC.Base.String>_R))
+                      ds1 } #)) -}
+e144c556098033c39175ad3f8d19f053
+  options32 :: [GHC.Base.String]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Main.options33
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+384ea555a0e7e392eee174c6c0c39149
+  options33 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "code"#) -}
+a51429c468cedba52358009de7f2da23
+  options34 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "c"#) -}
+3795b2988deb42b13a71b2228352f1a4
+  options35 ::
+    System.Console.GetOpt.OptDescr
+      (Main.Options -> GHC.Types.IO Main.Options)
+  {- Strictness: m,
+     Unfolding: (System.Console.GetOpt.Option
+                   @ (Main.Options -> GHC.Types.IO Main.Options)
+                   Main.options42
+                   Main.options40
+                   Main.options37
+                   Main.options36) -}
+67c979cfa1ecbb8cdf7a03ab8668b110
+  options36 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "File with code"#) -}
+cbad60c52a43f35e9ef0141525c6002b
+  options37 ::
+    System.Console.GetOpt.ArgDescr
+      (Main.Options -> GHC.Types.IO Main.Options)
+  {- Strictness: m2,
+     Unfolding: (System.Console.GetOpt.ReqArg
+                   @ (Main.Options -> GHC.Types.IO Main.Options)
+                   Main.options39
+                     `cast`
+                   (<GHC.Base.String>_R
+                    ->_R <Main.Options>_R
+                    ->_R Sym (GHC.Types.N:IO[0] <Main.Options>_R))
+                   Main.options38) -}
+22e3241fd942eda7e5bfa57b203b2062
+  options38 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "FILE"#) -}
+7690d78adaaad422b49497db2c748700
+  options39 ::
+    GHC.Base.String
+    -> Main.Options
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Main.Options #)
+  {- Arity: 3, Strictness: <L,U><L,1*U(A,U)><S,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ (arg :: GHC.Base.String)
+                   (opt :: Main.Options)
+                   (eta :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 (# eta,
+                    case opt of wild { Main.Options ds ds1 ->
+                    Main.Options
+                      (System.IO.readFile1 arg)
+                        `cast`
+                      (Sym (GHC.Types.N:IO[0] <GHC.Base.String>_R))
+                      ds1 } #)) -}
+55e49b9339c95351bda4246fe22a493d
+  options4 ::
+    [System.Console.GetOpt.OptDescr
+       (Main.Options -> GHC.Types.IO Main.Options)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (System.Console.GetOpt.OptDescr
+                        (Main.Options -> GHC.Types.IO Main.Options))
+                   Main.options5
+                   (GHC.Types.[]
+                      @ (System.Console.GetOpt.OptDescr
+                           (Main.Options -> GHC.Types.IO Main.Options)))) -}
+5f44cb56527546f23c60c91efccad9ea
+  options40 :: [GHC.Base.String]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Main.options41
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+ad939e7b48155ae1eeb70893e48c1be3
+  options41 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "file"#) -}
+1ebcb3dcf7a26f6ae59c2784dca50cab
+  options42 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "f"#) -}
+daf78d8167cf22e3a2ad688400829e58
+  options5 ::
+    System.Console.GetOpt.OptDescr
+      (Main.Options -> GHC.Types.IO Main.Options)
+  {- Strictness: m,
+     Unfolding: (System.Console.GetOpt.Option
+                   @ (Main.Options -> GHC.Types.IO Main.Options)
+                   Main.options11
+                   Main.options9
+                   Main.options7
+                   Main.options6) -}
+c8861d9e400c51cb866f2d60a34617b6
+  options6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Show help"#) -}
+e4cff98f3a5580a764b2f088d8656e09
+  options7 ::
+    System.Console.GetOpt.ArgDescr
+      (Main.Options -> GHC.Types.IO Main.Options)
+  {- Strictness: m1,
+     Unfolding: (System.Console.GetOpt.NoArg
+                   @ (Main.Options -> GHC.Types.IO Main.Options)
+                   Main.options8
+                     `cast`
+                   (<Main.Options>_R
+                    ->_R Sym (GHC.Types.N:IO[0] <Main.Options>_R))) -}
+74ff2a6d9ae6229a8cf8e0c346d54778
+  options8 ::
+    Main.Options
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Main.Options #)
+  {- Arity: 2, Strictness: <L,A><S,U>, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, True)
+                (\ (w :: Main.Options)
+                   (w1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 Main.$woptions w1) -}
+eebe16bc8d5974d5f7c7831906738551
+  options9 :: [GHC.Base.String]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Main.options10
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+8ffb198ec12237bd6602f476c1329e7e
   programName :: [GHC.Types.Char]
-a040d10fc55efde37a870d203c72a563
+  {- Unfolding: (GHC.CString.unpackAppendCString#
+                   "Mascap"#
+                   Main.programName1) -}
+3086568ca3bcf594fe3f3a1484113f5e
+  programName1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackAppendCString#
+                   " - "#
+                   Main.versionString) -}
+5e7673f883aac1a15673f321adfd6519
   startOptions :: Main.Options
-87717ccc3285f3e9cc6ddf93d8d2f080
+  {- Strictness: m,
+     Unfolding: (Main.Options
+                   System.IO.getContents1
+                     `cast`
+                   (Sym (GHC.Types.N:IO[0] <GHC.Base.String>_R))
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+9107faf57c87eccf46a15f1db06d9a45
   versionString :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Version 0.0.1"#) -}
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:
 parallel variables:
 parallel tycons:
-trusted: safe
+trusted: none
 require own pkg trusted: False
 
