@@ -73,6 +73,7 @@ pop = do
 
 pop2 = (, ) <$> pop <*> pop
 pop3 = (,,) <$> pop <*> pop <*> pop
+pop4 = (,,,) <$> pop <*> pop <*> pop <*> pop
 
 peek = do
   a <- pop
