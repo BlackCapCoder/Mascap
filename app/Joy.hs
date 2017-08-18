@@ -8,6 +8,7 @@ import Data.Fixed
 import Data.List
 import System.Exit
 import qualified Data.Map as Ma
+import qualified Prefix as P
 
 num = do
   Symb (Chr c) <- peek
@@ -18,6 +19,11 @@ num = do
              return $ case x of
                Nothing -> Just . Symb . Num $ read [c]
                (Just(Symb(Num x))) -> Just . Symb . Num $ read [c] * 10 + x
+
+num' = do
+  x <- num
+  case x of Just n -> push n
+            _   -> nop
 
 popOp = do
   x <- pop
@@ -36,9 +42,14 @@ popBool = do
 
 pushN = mapM_ push . reverse
 
-wordSyn ws
-  | gs <- sortOn fst ws
-  = undefined
+wordSyn ws = Interpreter
+  { codepage = Ma.empty
+  , parent   = nullInterpreter
+  , fallback = \x -> case x of
+                          Chr c -> undefined
+                          _     -> nop
+  }
+  where p = P.fromList ws
 
 joyInterp :: Interpreter
 joyInterp = wordSyn
