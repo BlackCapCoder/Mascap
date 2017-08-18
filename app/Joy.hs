@@ -55,9 +55,7 @@ wordSyn = P.toInterp emptyInterpreter
 
 joyInterp :: Interpreter
 joyInterp = wordSyn
-  [ (" ",             nop)
-  , ("\n",            nop)
-  , ("0",             num' 0)
+  [ ("0",             num' 0)
   , ("1",             num' 1)
   , ("2",             num' 2)
   , ("3",             num' 3)
@@ -67,6 +65,8 @@ joyInterp = wordSyn
   , ("7",             num' 7)
   , ("8",             num' 8)
   , ("9",             num' 9)
+  -- , (" ",             nop)
+  -- , ("\n",            nop)
   , ("!=",            joy_neq)
   , ("*",             joy_mul)
   , ("+",             joy_add)
