@@ -35,14 +35,19 @@ instance Monoid Interpreter where
             = Interpreter (ca `mappend` cb) pa (fa >> fb)
 
 
-defaultInterpreter, nullInterpreter :: Interpreter
+defaultInterpreter, emptyInterpreter, nullInterpreter :: Interpreter
 
 defaultInterpreter
   = Interpreter defCodepage nullInterpreter $ const nop
 
+emptyInterpreter
+  = Interpreter M.empty emptyInterpreter $ const nop
+
 nullInterpreter
   = Interpreter M.empty nullInterpreter
   $ error "Tried to interpret with the null interpreter"
+
+
 
 initialState
   = State defaultInterpreter []
@@ -177,14 +182,12 @@ outp = do
   Symb x <- pop
   case x of
     Chr s -> liftIO $ putChar s
-    Num n -> liftIO $ print n
+    Num n -> liftIO $ putStr $ show n
 
 
 readInp = liftIO getChar >>= push . Symb . Chr
 
-dup = gets stack >>= \s -> case s of
-    []     -> nop
-    (x:xs) -> push x
+dup = peek >>= push
 
 pop' = void pop
 

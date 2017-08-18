@@ -12,19 +12,26 @@ import qualified Prefix as P
 import Control.Arrow
 
 num = do
-  Symb (Chr c) <- peek
-  if not (isDigit c)
-     then return Nothing
-     else do joy_pop
-             x <- num
-             return $ case x of
-               Nothing -> Just . Symb . Num $ read [c]
-               (Just(Symb(Num x))) -> Just . Symb . Num $ read [c] * 10 + x
+  Symb s <- peek
+  case s of
+       Chr c -> if not (isDigit c)
+                then return Nothing
+                else do pop
+                        x <- num
+                        return $ case x of
+                          Nothing -> Just . Symb . Num $ read [c]
+                          (Just(Symb(Num x))) -> Just . Symb . Num $ read [c] * 10 + x
+       Num n -> do pop
+                   x <- num
+                   return $ case x of
+                     Nothing -> Just . Symb . Num $ n
+                     (Just(Symb(Num x))) -> Just . Symb . Num $ x * 10 + n
 
-num' = do
+
+num' n = do
   x <- num
-  case x of Just n -> push n
-            _   -> nop
+  case x of Just (Symb (Num v)) -> push . Symb . Num $ v*10 + n
+            _   -> push . Symb $ Num n
 
 popOp = do
   x <- pop
@@ -43,12 +50,24 @@ popBool = do
 
 pushN = mapM_ push . reverse
 
-wordSyn = P.toInterp defaultInterpreter
+wordSyn = P.toInterp emptyInterpreter
         . P.fromList . map (first $ map Chr)
 
 joyInterp :: Interpreter
 joyInterp = wordSyn
-  [ ("!=",            joy_neq)
+  [ (" ",             nop)
+  , ("\n",            nop)
+  , ("0",             num' 0)
+  , ("1",             num' 1)
+  , ("2",             num' 2)
+  , ("3",             num' 3)
+  , ("4",             num' 4)
+  , ("5",             num' 5)
+  , ("6",             num' 6)
+  , ("7",             num' 7)
+  , ("8",             num' 8)
+  , ("9",             num' 9)
+  , ("!=",            joy_neq)
   , ("*",             joy_mul)
   , ("+",             joy_add)
   , ("-",             joy_sub)

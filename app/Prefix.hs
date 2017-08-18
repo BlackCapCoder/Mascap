@@ -33,7 +33,7 @@ toInterp p (Prefix m d) =
       { parent   = p
       , codepage = M.map install m
       , fallback = \s -> do
-          case d of Just x -> x; _ -> nop
+          case d of Just x -> x;_ -> nop
           push $ Intr p
           deify
           push $ Intr p
