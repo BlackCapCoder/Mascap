@@ -4,6 +4,7 @@ import Mascarpone hiding (run, initialState)
 import Control.Monad
 import Control.Monad.State
 import qualified Data.Map as M
+import Joy (joyInterp)
 
 
 instance Monoid Interpreter where
@@ -28,8 +29,10 @@ newCodepage = M.fromList
   [ (Chr '+', combine)
   , (Chr 'C', pushCap)
   , (Chr 'D', pushDef)
+  , (Chr 'J', pushJoy)
   ]
 
 combine = pop2 >>= \(Intr i, Intr j) -> push . Intr $ i `mappend` j
 pushDef = push $ Intr defaultInterpreter
 pushCap = push $ Intr newInterp
+pushJoy = push $ Intr joyInterp
