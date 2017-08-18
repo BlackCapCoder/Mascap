@@ -5,11 +5,10 @@ import Control.Monad.State
 import Data.Maybe
 import qualified Data.Map as M
 
-
 -- Note: Numbers are not standard mascarpone, I chose to
 --       include them for efficiency
 data Symbol = Chr Char | Num Double
-            deriving (Ord, Eq)
+            deriving (Ord, Eq, Show)
 
 type Effect = StateT ProgState IO ()
 
@@ -28,6 +27,12 @@ data ProgState = State
   { interpreter :: Interpreter
   , stack       :: [StackElem]
   }
+
+instance Monoid Interpreter where
+  mempty = Interpreter M.empty mempty $ const nop
+  mappend (Interpreter ca pa fa)
+          (Interpreter cb pb fb)
+            = Interpreter (ca `mappend` cb) pa (fa >> fb)
 
 
 defaultInterpreter, nullInterpreter :: Interpreter
@@ -137,7 +142,7 @@ setParent = do
 
 create = do
   Intr i <- pop
-  str        <- popString
+  str    <- popString
   push . Op $ interpretWith i str
 
 expand = error "Expand not implemented"
@@ -169,8 +174,11 @@ quotesym = do
   deify
 
 outp = do
-  Symb (Chr s) <- pop
-  liftIO $ putChar s
+  Symb x <- pop
+  case x of
+    Chr s -> liftIO $ putChar s
+    Num n -> liftIO $ print n
+
 
 readInp = liftIO getChar >>= push . Symb . Chr
 

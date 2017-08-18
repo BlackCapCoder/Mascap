@@ -3,8 +3,9 @@ module Prefix where
 import qualified Data.Map as M
 import Data.List hiding (find)
 import Control.Arrow
-import Mascarpone
+import Mascarpone hiding (install)
 import Control.Monad.State
+import Debug.Trace
 
 data Prefix a b = Prefix (M.Map a (Prefix a b)) (Maybe b)
   deriving Show
@@ -26,14 +27,25 @@ find (Prefix m d) f s
   | otherwise = (f', s)
   where f' | Just x <- d = x | otherwise = f
 
-toInterp (Prefix m d) f = Interpreter
-  { codepage = M.empty
-  , parent   = f
-  , fallback = \s -> do
-      case s of
-           Chr x | Just p' <- M.lookup x m ->
-             modify $ \st -> st { interpreter = toInterp p' f }
-                 | Just x <- d  -> x
-                 | otherwise -> nop
-           _     -> nop
-  }
+toInterp :: Interpreter -> Prefix Symbol Effect -> Interpreter
+toInterp p (Prefix m d) =
+    Interpreter
+      { parent   = p
+      , codepage = M.map install m
+      , fallback = \s -> do
+          case d of Just x -> x; _ -> nop
+          push $ Intr p
+          deify
+          push $ Intr p
+          push $ Symb s
+          extract
+          perform
+      }
+
+install :: Prefix Symbol Effect -> Effect
+install p@(Prefix m b)
+  | M.null m, Just x <- b = x
+  | otherwise = do
+      -- liftIO $ print $ M.keys m
+      i <- gets interpreter
+      modify $ \s -> s { interpreter = toInterp i p }

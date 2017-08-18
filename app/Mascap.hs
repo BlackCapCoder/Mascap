@@ -7,12 +7,6 @@ import qualified Data.Map as M
 import Joy (joyInterp)
 
 
-instance Monoid Interpreter where
-  mempty = Interpreter M.empty mempty $ const nop
-  mappend (Interpreter ca pa fa)
-          (Interpreter cb pb fb)
-            = Interpreter (ca `mappend` cb) pa (fa >> fb)
-
 newInterp
   = Interpreter (defCodepage `mappend` newCodepage) nullInterpreter $ const nop
 
