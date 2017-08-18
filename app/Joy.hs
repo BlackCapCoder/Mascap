@@ -36,7 +36,6 @@ popBool = do
 
 pushN = mapM_ push . reverse
 
--- wordSyn :: [(String, StateT ProgState IO ())] -> Ma.Map Symbol (StateT ProgState IO ())
 wordSyn ws
   | gs <- sortOn fst ws
   = undefined
