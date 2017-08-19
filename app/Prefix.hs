@@ -27,11 +27,12 @@ find (Prefix m d) f s
   | otherwise = (f', s)
   where f' | Just x <- d = x | otherwise = f
 
+
 toInterp :: Interpreter -> Prefix Symbol Effect -> Interpreter
 toInterp p (Prefix m d) =
     Interpreter
       { parent   = p
-      , codepage = M.map install m
+      , codepage = M.map (install p) m
       , fallback = \s -> do
           case d of Just x -> x;_ -> nop
           push $ Intr p
@@ -42,10 +43,32 @@ toInterp p (Prefix m d) =
           perform
       }
 
-install :: Prefix Symbol Effect -> Effect
-install p@(Prefix m b)
-  | M.null m, Just x <- b = x
+install :: Interpreter -> Prefix Symbol Effect -> Effect
+install i p@(Prefix m b)
+  | M.null m, Just x <- b = do
+      x
+      push $ Intr i
+      deify
   | otherwise = do
       -- liftIO $ print $ M.keys m
-      i <- gets interpreter
       modify $ \s -> s { interpreter = toInterp i p }
+
+install' :: Prefix Symbol Effect -> Effect
+install' p = do
+  i <- gets interpreter
+  install i p
+
+toInterp' :: Interpreter -> Prefix Symbol Effect -> Interpreter
+toInterp' p (Prefix m d) =
+    Interpreter
+      { parent   = p
+      , codepage = M.map install' m
+      , fallback = \s -> do
+          case d of Just x -> x;_ -> nop
+          push $ Intr p
+          deify
+          push $ Intr p
+          push $ Symb s
+          extract
+          perform
+      }

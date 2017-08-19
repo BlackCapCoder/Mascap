@@ -18,5 +18,6 @@ executable mascap
   build-depends:       base
                      , containers
                      , mtl
+                     , monad-loops
   default-language:    Haskell2010
   other-modules:       Mascarpone, Mascap, Joy, Prefix

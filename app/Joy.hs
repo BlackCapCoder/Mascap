@@ -10,28 +10,22 @@ import System.Exit
 import qualified Data.Map as Ma
 import qualified Prefix as P
 import Control.Arrow
+import Control.Monad.Loops
 
-num = do
-  Symb s <- peek
-  case s of
-       Chr c -> if not (isDigit c)
-                then return Nothing
-                else do pop
-                        x <- num
-                        return $ case x of
-                          Nothing -> Just . Symb . Num $ read [c]
-                          (Just(Symb(Num x))) -> Just . Symb . Num $ read [c] * 10 + x
-       Num n -> do pop
-                   x <- num
-                   return $ case x of
-                     Nothing -> Just . Symb . Num $ n
-                     (Just(Symb(Num x))) -> Just . Symb . Num $ x * 10 + n
+num n = flip P.Prefix (Just $ push $ Symb $ Num n)
+      $ Ma.fromList
+          [ (Chr '0', num $ n*10+0)
+          , (Chr '1', num $ n*10+1)
+          , (Chr '2', num $ n*10+2)
+          , (Chr '3', num $ n*10+3)
+          , (Chr '4', num $ n*10+4)
+          , (Chr '5', num $ n*10+5)
+          , (Chr '6', num $ n*10+6)
+          , (Chr '7', num $ n*10+7)
+          , (Chr '8', num $ n*10+8)
+          , (Chr '9', num $ n*10+9) ]
 
-
-num' n = do
-  x <- num
-  case x of Just (Symb (Num v)) -> push . Symb . Num $ v*10 + n
-            _   -> push . Symb $ Num n
+numInterp = P.toInterp' numInterp $ num 0
 
 popOp = do
   x <- pop
@@ -50,24 +44,21 @@ popBool = do
 
 pushN = mapM_ push . reverse
 
-wordSyn = P.toInterp emptyInterpreter
+wordSyn = P.toInterp' joyInterp
         . P.fromList . map (first $ map Chr)
+
+-- Execute a joy list
+exec = do
+  reify
+  create
+  perform
+
 
 joyInterp :: Interpreter
 joyInterp = wordSyn
-  [ ("0",             num' 0)
-  , ("1",             num' 1)
-  , ("2",             num' 2)
-  , ("3",             num' 3)
-  , ("4",             num' 4)
-  , ("5",             num' 5)
-  , ("6",             num' 6)
-  , ("7",             num' 7)
-  , ("8",             num' 8)
-  , ("9",             num' 9)
+  [ ("!=",            joy_neq)
   -- , (" ",             nop)
   -- , ("\n",            nop)
-  , ("!=",            joy_neq)
   , ("*",             joy_mul)
   , ("+",             joy_add)
   , ("-",             joy_sub)
@@ -269,7 +260,7 @@ joyInterp = wordSyn
   , ("while",         joy_while)
   , ("x",             joy_x)
   , ("xor",           joy_xor)
-  ]
+  ] `mappend` numInterp
 
 -- false : -> false
 -- Pushes the value true.
@@ -433,6 +424,10 @@ joy_rem = pop2 >>= \(Symb (Num a),Symb (Num b)) -> push $ Symb $ Num $ a `mod'` 
 
 -- div : I J -> K L
 -- Integers K and L are the quotient and remainder of dividing I by J.
+-- joy_div' = do
+--   (Symb (Num i), Symb (Num j)) <- pop2
+--   let (k,l) = quotRem i j
+--   pushN [Symb $ Num k, Symb $ Num l]
 joy_div' = undefined
 
 -- sign : N1 -> N2
@@ -580,15 +575,15 @@ joy_pred = undefined
 
 -- succ : M -> N
 -- Numeric N is the successor of numeric M.
-joy_succ = undefined
+joy_succ = pop >>= \(Symb(Num m)) -> push $ Symb $ Num (m+1)
 
 -- max : N1 N2 -> N
 -- N is the maximum of numeric values N1 and N2. Also supports float.
-joy_max = undefined
+joy_max = pop2 >>= \(Symb(Num n1), Symb(Num n2)) -> push $ Symb $ Num (max n1 n2)
 
 -- min : N1 N2 -> N
 -- N is the minimum of numeric values N1 and N2. Also supports float.
-joy_min = undefined
+joy_min = pop2 >>= \(Symb(Num n1), Symb(Num n2)) -> push $ Symb $ Num (min n1 n2)
 
 -- fclose : S ->
 -- Stream S is closed and removed from the stack.
@@ -900,7 +895,12 @@ joy_branch = undefined
 
 -- ifte : [B] [T] [F] -> ...
 -- Executes B. If that yields true, then executes T else executes F.
-joy_ifte = undefined
+joy_ifte = do
+  (b,t,f) <- pop3
+  push b >> exec
+  b' <- popBool
+  if b' then push t else push f
+  exec
 
 -- ifinteger : X [T] [E] -> ...
 -- If X is an integer, executes T else executes E.
@@ -940,7 +940,9 @@ joy_cond = undefined
 
 -- while : [B] [D] -> ...
 -- While executing B yields true executes D.
-joy_while = undefined
+joy_while = do
+  (b,d) <- pop2
+  whileM_ (push b >> exec >> popBool) $ push d >> exec
 
 -- linrec : [P] [T] [R1] [R2] -> ...
 -- Executes P. If that yields true, executes T. Else executes R1, recurses, executes R2.
